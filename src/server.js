@@ -20,8 +20,10 @@ app.use(express.urlencoded({extended: false}));
 
 // ROUTES
 const usuariosRuta = require('./routes/usuario');
+const formularioRuta = require('./routes/formularios')
 
 app.use('/usuarios', usuariosRuta);
+app.use('/formularios', formularioRuta)
 
 //ARCHIVOS ESTATICOS
 
