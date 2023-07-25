@@ -21,9 +21,11 @@ app.use(express.urlencoded({extended: false}));
 // ROUTES
 const usuariosRuta = require('./routes/usuario');
 const formularioRuta = require('./routes/formularios')
+const indexRuta = require('./routes/index')
 
 app.use('/usuarios', usuariosRuta);
 app.use('/formularios', formularioRuta)
+app.use('/index', indexRuta)
 
 //ARCHIVOS ESTATICOS
 

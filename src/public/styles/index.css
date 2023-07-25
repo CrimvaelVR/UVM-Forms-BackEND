@@ -1,0 +1,76 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5C8D89;
+    color: white;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
+}
+
+main {
+    padding: 20px 40px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createButton {
+    border: none;
+    background-color: #74B49B;
+    color: white;
+    font-size: 1.8rem;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formsText {
+    margin: 20px 0;
+    padding-top: 15px;
+    font: bold 2.5rem Calibri;
+    border-top: 2px solid #5C8D89;
+    color: #5C8D89;
+}
+
+.forms {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #5C8D89;
+    border-radius: 5px;
+}
+
+.cardForm {
+    background-color: #F4F9F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%;
+    box-shadow: 1px 1px 5px 1px #686868;
+    border-top: 10px solid #74B49B;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.formTitle {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #74B49B;
+    font-weight: bold;
+}
+
+.formDescription {
+    font-size: 1.2rem;
+    color: #555555;
+}

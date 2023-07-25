@@ -7,7 +7,7 @@ class formularioController {
         try {
           const datos = req.body;
           const {titulo, descripcion} = req.body
-          const id_Autor = "jjaosjdajn322142323242323d2s"
+          const id_Autor = "esca123456"
           const formularios = await forms.find()
           let ultimoId
 
