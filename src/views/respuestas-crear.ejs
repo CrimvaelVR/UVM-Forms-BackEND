@@ -1,0 +1,19 @@
+<h1>Crear una respuesta</h1>
+<form action="/respuestas/crear" method="POST">
+  <div>
+    <label for="id_encuesta">Id de Encuesta:</label>
+    <input type="text" id="id_encuesta" name="id_encuesta" required>
+  </div>
+  <div>
+    <label for="id_usuario">Id de Usuario:</label>
+    <input type="text" id="id_usuario" name="id_usuario" required>
+  </div>
+  <div>
+    <label for="respuesta">Respuesta:</label>
+    <input type="text" id="respuesta" name="respuesta" required>
+  </div>
+  <div>
+    <input type="hidden" name="rol" value="usuario">
+  </div>
+  <button type="submit">Enviar respuesta</button>
+</form>
