@@ -30,10 +30,11 @@
             <% } else { %>
 
                 <% for (i = 0; i < formularios.length; i++) { %>
-                    <a class="cardForm" href="/formularios/<%= formularios[i]._id %>">
+                    <div class="cardForm">
                         <p class="formTitle"><%= formularios[i].titulo %></p>
                         <p class="formDescription"><%= formularios[i].descripcion %></p>
-                    </a>
+                        <a href="/formularios/<%= formularios[i]._id %>" style="background-color: green; padding: 5px; border-radius: 30px; margin-top: 120px;">Ver respuestas</a>
+                    </div>
                 <% } %>
 
             <% } %>

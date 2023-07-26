@@ -1,19 +1,26 @@
 <h1>Crear una respuesta</h1>
-<form action="/respuestas/crear" method="POST">
-  <div>
-    <label for="id_encuesta">Id de Encuesta:</label>
-    <input type="text" id="id_encuesta" name="id_encuesta" required>
-  </div>
-  <div>
-    <label for="id_usuario">Id de Usuario:</label>
-    <input type="text" id="id_usuario" name="id_usuario" required>
-  </div>
-  <div>
-    <label for="respuesta">Respuesta:</label>
-    <input type="text" id="respuesta" name="respuesta" required>
-  </div>
-  <div>
-    <input type="hidden" name="rol" value="usuario">
-  </div>
+<h2><%- formulario.titulo %></h2>
+<p><%- formulario.descripcion %></p>
+<form action="" method="POST">
+
+  <% if(preguntas == '') { %>
+
+    <h3>No tienes formularios registrados</h3>
+
+  <% } else { %>
+
+      <% for (i = 0; i < preguntas.length; i++) { %>
+        
+        <div>
+          <label for=""><%- preguntas[i].texto %></label>
+          <input type="text">
+        </div>
+
+      <% } %>
+
+  <% } %>
+
+  
+
   <button type="submit">Enviar respuesta</button>
 </form>
