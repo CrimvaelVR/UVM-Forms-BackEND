@@ -48,20 +48,22 @@ main {
     gap: 20px;
     background-color: #1d555b;
     border-radius: 5px;
-    height: 580px;
+    height: 100%;
+    width: 100%;
 }
 
 .cardForm {
     background-color: #F4F9F4;
     padding: 20px;
     border-radius: 10px;
-    width: 250px;
+    width: 24%;
     height: 250px;
     box-shadow: 1px 1px 5px 1px #686868;
     border-top: 10px solid #809e3e;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -70,7 +72,7 @@ main {
     background-color: #F4F9F4;
     padding: 20px;
     border-radius: 10px;
-    width: 250px;
+    width: 24%;
     height: 250px;
     box-shadow: 1px 1px 5px 1px #686868;
     border-top: 10px solid #860000;
@@ -78,8 +80,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     transition: all 0.5s ease-in-out;
+    justify-content: center;
+    
 }
 
 .formTitleNuevo {
@@ -110,7 +113,7 @@ main {
     background-color: #F4F9F4;
     padding: 20px;
     border-radius: 10px;
-    width: 450px;
+    width: 33.3%;
     height: 250px;
     box-shadow: 1px 1px 5px 1px #686868;
     border-top: 10px solid #809e3e;
@@ -136,4 +139,21 @@ main {
     color: #860000;
 }
 
+#searchIcon{
+    font-size: 20px;
+    color: white;
+}
+
+.formBuscar{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.formBuscar input{
+    border-radius: 20px;
+    text-indent: 10px;
+    height: 30px;
+    padding: 10px;
+}
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="/resources/uvm.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -37,14 +37,20 @@
     </header>
 
     <main>
-        <h2> <%- formulario.titulo %> </h2>
+        <h1 style="color: #860000; margin-bottom: 10px;"> <%- formulario.titulo %> </h1>
         <p> <%- formulario.descripcion %> </p>
 
-        <h4>Respuestas</h4>
+        <p class="formsText">Respuestas</p>
         <div class="forms">
 
 
+            <% if(respuestas == "") { %>
 
+                <div class="cardFormNuevo"> 
+                    <p class="formTitleNuevo"> No tienes respuestas</p>
+                </div>
+
+            <% }else{ %>
             <% for (i = 0; i < respuestas.length; i++) { %>
                 <div class="cardFormResp">
                     <p class="formTitleResp"><%= respuestas[i].nombreUsuario %></p>
@@ -54,8 +60,7 @@
                     <% } %>
                 </div>
             <% } %>
-        
-
+            <% } %>
 
       
         </div>

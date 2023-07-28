@@ -13,7 +13,7 @@ class RespuestasController {
 
           for (let i = 0; i < postRespuestas.id.length; i++) {
             respuestas[i] = {
-              id_pregunta: postRespuestas.id[i],
+              id_pregunta: Number(postRespuestas.id[i]),
               texto_respuesta: postRespuestas.Texto_Respuesta[i],
               opcion_selecicionada: ''
             };

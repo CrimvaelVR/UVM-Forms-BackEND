@@ -9,7 +9,7 @@ class formularioController {
     try {
       const datos = req.body;
       const {titulo, descripcion} = req.body
-      const id_Autor = "esca123456"
+      const id_Autor = "64c3d28e0eda493772477413"
       const formularios = await forms.find()
       let ultimoId
 
@@ -25,7 +25,7 @@ class formularioController {
       .map(clave => datos[clave]);
     
       const preguntas = preguntasObj.map((pregunta, index) => ({
-        id: index + ultimoId,
+        id: index + Number(ultimoId),
         texto: pregunta,
         tipo: "",
         opciones: "",
@@ -33,7 +33,7 @@ class formularioController {
 
       const nuevoformulario = new forms({id_Autor, titulo, descripcion, preguntas});
       await nuevoformulario.save();
-      res.status(201).render({mensaje: 'Formulario creado correctamente', usuario: nuevoformulario});
+      res.status(201).json({mensaje: 'Formulario creado correctamente', usuario: nuevoformulario});
       
     } catch (error) {
       res.status(500).json({mensaje: 'Error al crear el formulario', error});
@@ -89,6 +89,36 @@ class formularioController {
         res.status(200).render('respuestas-crear', {formulario: formulario, preguntas: preguntas});
 
       }
+
+    } catch (error) {
+      res.status(500).json({mensaje: 'Error al obtener el usuario', error});
+    }
+  };
+
+  consultarFormularioTitulo = async (req, res) => {
+    try {
+      const titulo = req.params.titulo;
+
+      if (!RegExp.escape) {
+        RegExp.escape = function(s) {
+          return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        };
+      }
+
+      var regex = new RegExp('.*' + RegExp.escape(titulo) + '.*', 'i');
+      const resultadoBusqueda = await forms.find({titulo: regex});
+      const user = 'José Escalona'
+      let nombreAutor = []
+      let autores = []
+      for (let i=0; i < resultadoBusqueda.length; i++){
+        autores[i] = await users.findById(resultadoBusqueda[i].id_Autor);
+      }
+
+      for(let f=0; f<autores.length; f++){
+        nombreAutor[f]= autores[f].nombre
+      }
+
+      res.status(200).render('formularios-buscar', {resultadoBusqueda: resultadoBusqueda, titulo: titulo, user: user, autor: nombreAutor});
 
     } catch (error) {
       res.status(500).json({mensaje: 'Error al obtener el usuario', error});

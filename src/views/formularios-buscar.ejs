@@ -14,18 +14,15 @@
     <header>
         <div class="header">
             <a href="/" class="logo">
-                <img src="resources/uvm.png" alt="Logo">
+                <img src="/resources/uvm.png" alt="Logo">
                 <p>UVM Forms</p>
             </a>
           
           <div class="header-right">
-            <div class="formBuscar">
-                <a id="buscar">
-                    <i class='bx bxs-search' id="searchIcon"></i>
-                </a>
-                <input type="text" placeholder="Buscar" id="textoBuscar">
-
-            </div>
+            <form action="" method="post" class="formBuscar">
+                <i class='bx bxs-search' id="searchIcon"></i>
+                <input type="text" placeholder="Buscar">
+            </form>
 
             <a href="#" id="inicio">Inicio</a>
             <a href="#" id="formularios">Mis formularios</a>
@@ -49,41 +46,22 @@
         <div class="buttons">
         <a href=""><button id="logoutButton" class="logoutButton"><i class='bx bx-log-out' id="logoutIcon"></i>Cerrar sesión</button></a>
         </div>
-        <p class="formsText">Tus formularios</p>
+        <p class="formsText">Resultado de la busqueda: "<%- titulo %>"</p>
         <div class="forms">
 
-            <a class="cardFormNuevo" href="/formularios/crear" id="createButton"> 
-                <p class="formTitleNuevo"> Crear nuevo formulario</p>
-                <i class='bx bx-plus' id="plusIcon"></i>
-            </a>
-
-                <% for (i = 0; i < formularios.length; i++) { %>
+                <% for (i = 0; i < resultadoBusqueda.length; i++) { %>
                     <div class="cardForm">
-                        <p class="formTitle"><%= formularios[i].titulo %></p>
-                        <p class="formDescription"><%= formularios[i].descripcion %></p>
-                        <a href="/formularios/<%= formularios[i]._id %>" style="text-decoration: none; color: white; background-color: #88c426; padding: 10px; border-radius: 30px; margin-top: 20px;">Ver respuestas</a>
+                        <p class="formDescription"><b>Autor: <%= autor[i] %></b></p>
+                        <p class="formTitle"><%= resultadoBusqueda[i].titulo %></p>
+                        <p class="formDescription"><%= resultadoBusqueda[i].descripcion %></p>
+                        <a href="/formularios/<%= resultadoBusqueda[i]._id %>" style="text-decoration: none; color: white; background-color: #88c426; padding: 10px; border-radius: 30px; margin-top: 20px;">Responder formulario</a>
                     </div>
                 <% } %>
 
-      
         </div>
     </main>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script>
-        const buscar = document.getElementById('buscar')
-        const textoBuscar = document.getElementById('textoBuscar')
-
-
-
-        buscar.addEventListener('click', () => {
-            const textoBuscar = document.getElementById('textoBuscar').value
-            buscar.href = '/busqueda/' + textoBuscar
-        })
-
-
-
-    </script>
 
 </body>
 </html>
