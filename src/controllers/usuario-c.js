@@ -7,7 +7,6 @@ class UsuarioController {
   async crearUsuario(req, res) {
     try {
       await bcrypt.encriptarContrasenaMiddleware(req, res, async () => {
-        console.log(req.body)
         const { nombre, cedula, correo, usuario, contrasena, rol } = req.body;
         const nuevoUsuario = new user({ nombre, cedula, correo, usuario, contrasena, rol });
         await nuevoUsuario.save();
@@ -74,7 +73,6 @@ class UsuarioController {
 
   async iniciarSesion(req, res) {
     try {
-      console.log('req.body:', req.body);
 
       // Verificar si se proporcionaron las credenciales
       if (!req.body.usuario || !req.body.contrasena) {
@@ -82,8 +80,6 @@ class UsuarioController {
       }
   
       const { usuario, contrasena } = req.body;
-      console.log('usuario:', usuario);
-      console.log('contrasena:', contrasena);  
       // Buscar el usuario en la base de datos
       const usuarioEncontrado = await user.findOne({ usuario });
       // Verificar si el usuario existe
@@ -93,7 +89,6 @@ class UsuarioController {
 
       // Verificar la contraseña
       const contrasenaValida = await bcrypt.compare(contrasena, usuarioEncontrado.contrasena);
-      console.log(contrasenaValida)
 
       // Si la contraseña es inválida, enviar una respuesta de error
       if (!contrasenaValida) {

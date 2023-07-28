@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="/resources/uvm.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -19,13 +19,16 @@
             </a>
           
           <div class="header-right">
-            <form action="" method="post" class="formBuscar">
-                <i class='bx bxs-search' id="searchIcon"></i>
-                <input type="text" placeholder="Buscar">
-            </form>
+            
+            <div class="formBuscar">
+                <a id="buscar">
+                    <i class='bx bxs-search' id="searchIcon"></i>
+                </a>
+                <input type="text" placeholder="Buscar" id="textoBuscar">
+            </div>
 
             <a href="#" id="inicio">Inicio</a>
-            <a href="#" id="formularios">Mis formularios</a>
+            <a href="/index" id="formularios">Mis formularios</a>
 
             <% if(user == '') { %>
   
@@ -62,6 +65,27 @@
     </main>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <script>
+        const buscar = document.getElementById('buscar');
+        const textoBuscar = document.getElementById('textoBuscar');
+
+        function asignarURL() {
+            const textoBuscarr = textoBuscar.value;
+            buscar.href = '/busqueda/' + textoBuscarr;
+        }
+
+        buscar.addEventListener('click', asignarURL);
+
+        textoBuscar.addEventListener("keydown", function(event) {
+
+            if (event.keyCode == 13) {
+                buscar.click();
+            }
+        });
+
+
+    </script>
 
 </body>
 </html>

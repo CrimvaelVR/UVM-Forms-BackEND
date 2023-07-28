@@ -1,13 +1,23 @@
 // respuestasController.js (controlador de respuestas)
 
 const answers = require('../models/respuestas');
+const users = require('../models/usuarios');
+const jwt = require('jsonwebtoken')
 
 class RespuestasController {
 
     crearRespuesta = async (req, res) => {
         try {
           const id_encuesta = req.params.id;
-          const id_User = "64c307d7c7f7e40589daf5d9"
+          const token = req.cookies.token;
+          // Decodificar el token sin verificar su firma
+          const decoded = jwt.decode(token);
+          // Obtener el nombre de usuario del token
+          const username = decoded.usuario;
+          const user = username
+          const usuario = await users.find({usuario: username})
+          const id_User = usuario[0].id
+
           const postRespuestas = req.body;
           const respuestas = [];
 

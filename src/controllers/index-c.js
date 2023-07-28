@@ -19,7 +19,6 @@ class indexController {
           // Si se encuentra al usuario, obtener su id
           if (usuario) {
             const id_Autor = usuario._id;
-            console.log(id_Autor)
             // Buscar los formularios que tengan el id del usuario como autor
             forms.find({id_Autor: id_Autor})
               .then(formularios => {
