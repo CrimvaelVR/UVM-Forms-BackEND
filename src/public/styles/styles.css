@@ -1,14 +1,82 @@
+
+
+
 * {
 	padding: 0;
 	margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif; /* Tipo de letra del footer */
 }
 
 body {
     background-color: #f2f2f2;
 }
 
+.LogoUVMForms {
+    width: 90px;
+}
+
 header {
-    background-color: #F4F9F4;
-    box-shadow: 0 1px 5px 0 #d8d8d8;
-    padding: 20px;
+    background-color: #1d555b;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    z-index: 999; 
+    justify-content: space-between;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+  
+.logo {
+    display: flex;
+    text-decoration: none;   
+    gap: 15px; 
+    align-items: center;
+
+}
+
+.logo p {
+    color: white;
+    font-weight: 900;
+    width: 100%;
+    font-size: 25px ;
+}
+  
+.logo img { 
+    width: 70px;
+    height: 70px;
+}
+  
+.header-right {
+    display: flex;
+    align-items: center;
+}
+  
+.header-right a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s;
+ 
+}
+
+.header-right p {
+    display: block;
+    color: #88c426;
+    transition: 0.2s;
+    padding-left: 5px;
+
+}
+  
+.header-right a:hover {
+    transform: scale(1.1);
+    color: #88c426
+  
 }
