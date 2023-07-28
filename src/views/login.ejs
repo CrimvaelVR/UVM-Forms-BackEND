@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-    <div class="center">
+
+    <main>
         <h1>Login</h1>
-        <form action="/login" method="POST"> <!-- Agrega el atributo method y actualiza el action -->
+        <form action="/usuarios/login" method="POST" id="loginform"> <!-- Agrega el atributo method y actualiza el action -->
             <div class="txt_field">
                 <input type="text" name="usuario" required> <!-- Agrega el atributo name -->
                 <span></span>
@@ -26,6 +27,10 @@
                 No tienes cuenta? <a href="#">Registrate</a>
             </div>
         </form>
+        <div class="center">
     </div>
+    </main>
+
+
 </body>
 </html>

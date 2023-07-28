@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path')
+const cookieParser = require('cookie-parser');
+
 
 ///INICIALIZACIONES
 const app = express();
@@ -13,8 +15,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 
+
 // MIDDLEWARES
 app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
+
 
 // VARIABLES GLOBALES
 

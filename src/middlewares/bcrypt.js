@@ -1,11 +1,13 @@
 const bcrypt = require('bcryptjs');
 
+
 // Función para encriptar la contraseña
 const encriptarContrasena = async (contrasena) => {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(contrasena, salt);
   return hash;
 };
+
 
 // Middleware para encriptar la contraseña antes de guardarla
 const encriptarContrasenaMiddleware = async (req, res, next) => {
@@ -21,4 +23,9 @@ const encriptarContrasenaMiddleware = async (req, res, next) => {
   }
 };
 
-module.exports = { encriptarContrasenaMiddleware };
+const compare = async (Clave, ClaveEncrypt) => {
+  return await bcrypt.compare(Clave,ClaveEncrypt)
+}
+
+
+module.exports = { encriptarContrasenaMiddleware, compare };
