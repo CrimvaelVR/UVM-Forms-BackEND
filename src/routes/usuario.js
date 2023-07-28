@@ -27,7 +27,7 @@ router.get('/login', (req,res) =>{
 // Ruta para mostrar el formulario de crear usuario (GET)
 router.get('/crear', (req, res) => {
   // Renderizar el archivo EJS
-  res.render('usuario-crear.ejs');
+  res.render('register.ejs');
 });
 
 module.exports = router;
