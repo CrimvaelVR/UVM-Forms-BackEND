@@ -1,5 +1,4 @@
 const {Schema, model} = require('mongoose');
-const bcrypt = require('bcryptjs');
 
 const UsuarioEsquema = new Schema({
   nombre: {
@@ -34,22 +33,6 @@ const UsuarioEsquema = new Schema({
 },{
   timestamps: true
 });
-
-// Método para encriptar la contraseña antes de guardarla
-UsuarioEsquema.pre('save', async function(next) {
-  const usuario = this;
-  if (!usuario.isModified('contrasena')) return next();
-  const salt = await bcrypt.genSalt(10);
-  const hash = await bcrypt.hash(usuario.contrasena, salt);
-  usuario.contrasena = hash;
-  next();
-});
-
-// Método para comparar la contraseña con la almacenada
-UsuarioEsquema.methods.compararContrasena = async function(contrasena) {
-  return await bcrypt.compare(contrasena, this.contrasena);
-};
-
 // Crear el modelo de usuario
 const users = model('users', UsuarioEsquema);
 

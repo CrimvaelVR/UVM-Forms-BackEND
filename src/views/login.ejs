@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Login</h1>
+        <form action="/login" method="POST"> <!-- Agrega el atributo method y actualiza el action -->
+            <div class="txt_field">
+                <input type="text" name="usuario" required> <!-- Agrega el atributo name -->
+                <span></span>
+                <label>Usuario</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="contrasena" required> <!-- Agrega el atributo name -->
+                <span></span>
+                <label>Contraseña</label>
+            </div>
+            <div class="pass">Olvidaste tu contraseña?</div>
+            <input type="submit" value="Login">
+            <div class="signup_link">
+                No tienes cuenta? <a href="#">Registrate</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
