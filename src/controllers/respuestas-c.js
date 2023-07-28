@@ -28,17 +28,16 @@ class RespuestasController {
 
       // Función para obtener una respuesta por su id de encuesta
     obtenerRepuestaPorId = async (req, res) => {
-        try {
-          const id_encuesta = req.params.id_encuesta;
-          const respuesta = await respuestas.findById(id_encuesta);
-          if (!respuesta) {
-            return res.status(404).json({mensaje: 'Respuesta no encontrada de la encuesta'});
-          }
-          res.status(200).json({mensaje: 'Respuesta encontrada correctamente', respuesta});
-        } catch (error) {
-          res.status(500).json({mensaje: 'Error al obtener la respuesta', error});
+      Form.find({titulo: titulo}, (err, formularios) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send('Error al buscar los formularios');
+        } else {
+          // Enviar los datos de los formularios a una vista que los muestre y permita acceder a ellos
+          res.render('lista', {formularios: formularios});
         }
-      };
+      });
+    };
 }
 
 const respuestasC = new RespuestasController();

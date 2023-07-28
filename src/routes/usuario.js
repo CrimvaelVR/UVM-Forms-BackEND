@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/usuario-c');
-const { verificarSesion } = require('../middlewares/auth');
+const { verificarSesion, verifyToken } = require('../middlewares/auth');
 
 
 // Ruta para obtener todos los usuarios (GET)
@@ -40,5 +40,21 @@ router.get('/crear',
   // Renderizar el archivo EJS
   res.render('register.ejs');
 });
+
+router.get('/perfil', verificarSesion, async (req, res) => {
+  try {
+    const { usuario } = req.user; // Obtener el nombre de usuario del objeto req.user
+    const usuarioEncontrado = await user.findOne({ usuario }); // Buscar al usuario en la base de datos
+    if (!usuarioEncontrado) {
+      return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+    res.status(200).json({ mensaje: 'Datos del usuario obtenidos correctamente', usuario: usuarioEncontrado });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ mensaje: 'Error al obtener los datos del usuario', error });
+  }
+});
+
+
 
 module.exports = router;
