@@ -87,23 +87,41 @@ class formularioController {
     try {
       const id = req.params.id;
       const formulario = await forms.findById(id);
-      const id_Autor = "64bdc96bb35effdbf71156f9"
+      const id_Autor = "64c3ace76b00be0b6a971bc4"
+      const user = 'José Escalona'
 
       if (formulario.id_Autor === id_Autor){
 
         const getRespuestas = await answers.find({id_encuesta: id});
         const respuestas = []
+        const preguntasForm = formulario.preguntas
+
+
         for(let i=0; i<getRespuestas.length ; i++){
 
+          const preguntaConResp = []
+
+          const idRespuestas = getRespuestas[i].respuestas
           let nombreUsuario = await users.findById(getRespuestas[i].id_User)
+
+          for(let f=0; f< idRespuestas.length;f++){
+
+            if(preguntasForm[f].id == idRespuestas[f].id_pregunta){
+
+              preguntaConResp[f] = {
+                textoPregunta: preguntasForm[f].texto,
+                respuestaPregunta: idRespuestas[f].texto_respuesta
+              }
+            }
+          }
 
           respuestas[i] = {
             nombreUsuario: nombreUsuario.nombre,
-            respuestas: getRespuestas[i].respuestas
+            respuestas: preguntaConResp
           }
         }
-        console.log(respuestas)
-        res.status(200).render('respuestas-ver', {formulario: formulario});
+
+        res.status(200).render('respuestas-ver', {formulario: formulario, user:user, respuestas:respuestas});
 
       }else{
 

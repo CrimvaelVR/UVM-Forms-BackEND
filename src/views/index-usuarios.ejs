@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
     <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -29,7 +29,7 @@
 
             <% } else { %>
 
-                <i class='bx bx-user-circle'></i> <p> <%- user %></p>
+                <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
                 
             <% } %>
           </div>
@@ -49,12 +49,6 @@
                 <i class='bx bx-plus' id="plusIcon"></i>
             </a>
 
-
-            <% if(formularios == '') { %>
-
-                <h3>No tienes formularios registrados</h3>
-            <% } else { %>
-
                 <% for (i = 0; i < formularios.length; i++) { %>
                     <div class="cardForm">
                         <p class="formTitle"><%= formularios[i].titulo %></p>
@@ -63,7 +57,7 @@
                     </div>
                 <% } %>
 
-            <% } %>
+      
         </div>
     </main>
 
