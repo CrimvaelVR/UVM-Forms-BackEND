@@ -102,15 +102,26 @@ class UsuarioController {
       });
 
       // Enviar el token como respuesta al cliente
-      res.cookie('token', token, { httpOnly: true }).status(200).json({
-        mensaje: 'Inicio de sesión exitoso',
-        token,
-      });
+      res.cookie('token', token, { httpOnly: true }).redirect('/index');
+
     } catch (error) {
       console.log(error);
       res.status(500).json({ mensaje: 'Error al iniciar sesión', error });
     }
   }
+
+cerrarSesion = async (req, res) => {
+  try {
+    // Elimina la cookie del token
+    res.clearCookie('token');
+    // Redirige al usuario a la página de inicio de sesión
+    res.redirect('/usuarios/login');
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ mensaje: 'Error al cerrar sesión', error });
+  }  
+};
+  
 }
 
 const usuarioC = new UsuarioController();

@@ -3,7 +3,6 @@ const router = express.Router();
 const controller = require('../controllers/usuario-c');
 const { verificarSesion, verifyToken } = require('../middlewares/auth');
 
-
 // Ruta para obtener todos los usuarios (GET)
 router.get('/', controller.obtenerUsuarios);
 
@@ -21,7 +20,6 @@ router.post('/crear', controller.crearUsuario);
 
 // Ruta para iniciar sesión (POST)
 router.post('/login', controller.iniciarSesion);
-
 router.get('/login', verificarSesion, (req, res) => {
   // Si el usuario está autenticado, redirigir al usuario a la página de inicio
   if (req.user) {
@@ -41,7 +39,7 @@ router.get('/crear',
   res.render('register.ejs');
 });
 
-router.get('/perfil', verificarSesion, async (req, res) => {
+/*router.get('/perfil', verificarSesion, async (req, res) => {
   try {
     const { usuario } = req.user; // Obtener el nombre de usuario del objeto req.user
     const usuarioEncontrado = await user.findOne({ usuario }); // Buscar al usuario en la base de datos
@@ -54,7 +52,7 @@ router.get('/perfil', verificarSesion, async (req, res) => {
     res.status(500).json({ mensaje: 'Error al obtener los datos del usuario', error });
   }
 });
-
+*/
 
 
 module.exports = router;

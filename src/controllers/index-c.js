@@ -3,6 +3,7 @@ const user = require('../models/usuarios')
 const jwt = require('jsonwebtoken')
 
 
+
 class indexController {
   consultarFormularioUser = async (req, res) => {
     try {
@@ -42,7 +43,8 @@ class indexController {
         });
     } catch (error) {
       // Si ocurre un error al crear el formulario, enviar un mensaje de error
-      res.status(500).json({mensaje: 'Error al crear el formulario', error});
+      res.redirect('/usuarios/login')
+
     }
   };
 }

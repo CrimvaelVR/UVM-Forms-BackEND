@@ -1,0 +1,85 @@
+body {
+    font-family: Calibri;
+}
+
+.createForm{
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #1d555b;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.createForm h1 {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.createQuestion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000000;
+}
+
+.createQuestion label{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.createQuestion input[type="text"] {
+    width: 30%;
+    border: 3px solid #1d555b;
+    outline: none;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: #efefef;
+}
+
+.createQuestion input[type="text"]::placeholder{
+    color: #1d555b;
+}
+
+select {
+    width: 30%;
+    border: 3px solid #1d555b;
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+    color: #1d555b;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+#optionsContainer {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.addQuestion {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #bcd4de;
+    color: #13373b;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 1px 1px 3px 0 #525252;
+}
+
+#questionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#questionsContainer h2 {
+    text-align: center;
+}
+

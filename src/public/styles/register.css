@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: Calibri;
 }
 body{
   height: 100vh;
@@ -11,31 +11,22 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background-color: #1d555b;
 }
 .container{
   max-width: 700px;
   width: 100%;
-  background-color: gray;
+  background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px #00000026;
 }
 .container .title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-.container .title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
+
 .content form .user-details{
   display: flex;
   flex-wrap: wrap;
@@ -64,7 +55,7 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #9b59b6;
+  border-color: #88C426;
 }
  form .gender-details .gender-title{
   font-size: 20px;
@@ -93,7 +84,7 @@ form .input-box span.details{
  #dot-1:checked ~ .category label .one,
  #dot-2:checked ~ .category label .two,
  #dot-3:checked ~ .category label .three{
-   background: #9b59b6;
+   background: #88C426;
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
@@ -113,13 +104,21 @@ form .input-box span.details{
    font-weight: 500;
    letter-spacing: 1px;
    cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   transition: all 0.3s ease; 
+   background-color: #1d555b;
  }
  form .button input:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  background-color: #88C426;
   }
+form .backButton {
+  text-decoration: none;
+  color: #1d555b;
+  font-size: 1.2rem;
+}
+.backButton:hover {
+  text-decoration: underline;
+}
  @media(max-width: 584px){
  .container{
   max-width: 100%;
