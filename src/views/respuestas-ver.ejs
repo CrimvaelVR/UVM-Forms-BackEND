@@ -5,20 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
     <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
     <header>
-        <h1>UVM Forms</h1>
-    </header>
-    <main>
-        <div class="buttons">
-        <a href="/formularios/crear"><button id="createButton" class="createButton"><i class='bx bx-plus' id="plusIcon"></i>Crear formulario</button></a>
-        <a href=""><button id="logoutButton" class="logoutButton"><i class='bx bx-log-out' id="logoutIcon"></i>Cerrar sesión</button></a>
+        <div class="header">
+            <a href="/" class="logo">
+                <img src="/resources/uvm.png" alt="Logo">
+                <p>UVM Forms</p>
+            </a>
+          
+          <div class="header-right">
+            <a href="#" id="inicio">Inicio</a>
+            <a href="/index" id="formularios">Mis formularios</a>
+
+            <% if(user == '') { %>
+  
+                <a href="#">Ingresar</a>
+                <a href="#">Registrar</a>
+
+            <% } else { %>
+
+                <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+                
+            <% } %>
+          </div>
         </div>
-        <p class="formsText">Tus formularios</p>
+    </header>
+
+    <main>
+        <h2> <%- formulario.titulo %> </h2>
+        <p> <%- formulario.descripcion %> </p>
+
+        <h4>Respuestas</h4>
+        <div class="forms">
+
+
+
+            <% for (i = 0; i < respuestas.length; i++) { %>
+                <div class="cardFormResp">
+                    <p class="formTitleResp"><%= respuestas[i].nombreUsuario %></p>
+                    <% let todasRespuestas = respuestas[i].respuestas %>
+                    <% for (f = 0; f < todasRespuestas.length; f++) { %>
+                    <p class="formDescriptionResp"><b><%= todasRespuestas[f].textoPregunta %>: </b> <%= todasRespuestas[f].respuestaPregunta %></p>
+                    <% } %>
+                </div>
+            <% } %>
+        
+
+
+      
+        </div>
+
+
     </main>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
