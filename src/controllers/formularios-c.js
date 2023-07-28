@@ -1,6 +1,8 @@
 // userController.js (controlador de usuario)
 
 const forms = require('../models/formularios');
+const answers = require('../models/respuestas');
+const users = require('../models/usuarios');
 
 class formularioController {
   crearFormulario = async (req, res) => {
@@ -42,11 +44,34 @@ class formularioController {
     try {
       const id = req.params.id;
       const formulario = await forms.findById(id);
-      const preguntas = formulario.preguntas
-      if (!formulario) {
-        return res.status(404).json({mensaje: 'Formulario no encontrado'});
+      const id_Autor = "64bdc96bb35effdbf71156f9"
+
+      if (formulario.id_Autor === id_Autor){
+
+        const getRespuestas = await answers.find({id_encuesta: id});
+        const respuestas = []
+        for(let i=0; i<getRespuestas.length ; i++){
+
+          let nombreUsuario = await users.findById(getRespuestas[i].id_User)
+
+          respuestas[i] = {
+            nombreUsuario: nombreUsuario.nombre,
+            respuestas: getRespuestas[i].respuestas
+          }
+        }
+        console.log(respuestas)
+        res.status(200).render('respuestas-ver', {formulario: formulario});
+
+      }else{
+
+        const preguntas = formulario.preguntas
+        if (!formulario) {
+          return res.status(404).json({mensaje: 'Formulario no encontrado'});
+        }
+        res.status(200).render('respuestas-crear', {formulario: formulario, preguntas: preguntas});
+
       }
-      res.status(200).render('respuestas-crear', {formulario: formulario, preguntas: preguntas});
+
     } catch (error) {
       res.status(500).json({mensaje: 'Error al obtener el usuario', error});
     }

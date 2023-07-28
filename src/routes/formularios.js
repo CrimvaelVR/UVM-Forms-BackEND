@@ -15,4 +15,6 @@ router.get('/crear', (req, res) => {
 
 router.get('/:id', controller.obtenerFormularioId);
 
+router.post('/:id', controller2.crearRespuesta);
+
 module.exports = router;

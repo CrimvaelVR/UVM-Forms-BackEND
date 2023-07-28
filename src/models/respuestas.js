@@ -5,12 +5,12 @@ const RespuestasEsquema = new Schema({
     type: String,
     required: true
   },
-  id_usuario: {
+  id_User: {
     type: String,
     required: true,
   },
-  respuesta: {
-    type: String,
+  respuestas: {
+    type: Array,
     required: true,
   }
 },{
@@ -18,7 +18,7 @@ const RespuestasEsquema = new Schema({
 });
 
 // Crear el modelo de respuesta
-const respuestas = model('respuestas', RespuestasEsquema);
+const answers = model('answers', RespuestasEsquema);
 
 // Exportar el modelo de respuesta
-module.exports = respuestas;
+module.exports = answers;

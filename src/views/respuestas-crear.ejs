@@ -12,8 +12,9 @@
       <% for (i = 0; i < preguntas.length; i++) { %>
         
         <div>
-          <label for=""><%- preguntas[i].texto %></label>
-          <input type="text">
+          <label for="" ><%- preguntas[i].texto %></label>
+          <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+          <input type="text" name="Texto_Respuesta">
         </div>
 
       <% } %>
