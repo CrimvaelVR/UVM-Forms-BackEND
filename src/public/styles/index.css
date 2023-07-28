@@ -76,6 +76,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     transition: all 0.5s ease-in-out;
 }
 
@@ -96,8 +97,14 @@ main {
 }
 
 .formDescription {
-    font-size: 1.2rem;
+    font-size: 15px;
+    text-align: center;
     color: #555555;
+}
+
+#plusIcon {
+    font-size: 100px;
+    color: #860000;
 }
 
 
