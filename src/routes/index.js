@@ -10,6 +10,4 @@ router.get('/', (req, res) => {
 */
 
 router.get('/',  controller.consultarFormularioUser);
-
-
 module.exports = router;
