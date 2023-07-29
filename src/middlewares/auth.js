@@ -15,7 +15,6 @@ const tokenSign = (usuario) => {
 // Middleware para verificar el token en las rutas protegidas
 const verifyToken = (req, res, next) => {
   const token = req.cookies.token;
-  console.log(token)
   if (!token) return res.status(401).json({ error: "Acceso denegado" });
   try {
     // Verificamos el token usando la dependencia de jwt y el método .verify
@@ -33,7 +32,6 @@ const verifyToken = (req, res, next) => {
 const verificarSesion = (req, res, next) => {
   // Obtener el token de la cookie
   const token = req.cookies.token;
-  console.log(token)
 
   // Verificar si el token es válido
   try {

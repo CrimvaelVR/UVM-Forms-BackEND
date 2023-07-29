@@ -1,0 +1,5 @@
+_id,nombre,cedula,correo,usuario,contrasena,rol,createdAt,updatedAt,__v
+64c454d32f5ebe20cb72c343,Jose Escalona,28206133,joseales301@gmail.com,JoseEsca,$2a$10$MSzPRsrwcOFwBVLGjm2VkO9iq9DkrACbB3/fT62HkcS0aakfQh03e,Admin,2023-07-28T23:52:51.242Z,2023-07-28T23:52:51.242Z,0
+64c454f82f5ebe20cb72c345,Maikel Villegas,12345678,maikelvi@gmail.com,MaiMai,$2a$10$8kYZ/okUEH.5nl6VM1M21OBkkNeQSiSWffU2wEYJf28oFyIC1Ltwe,Admin,2023-07-28T23:53:28.857Z,2023-07-28T23:53:28.857Z,0
+64c4552f2f5ebe20cb72c347,Luis Monsalve,9876543,luisfifa24@gmail.com,LuisMon,$2a$10$q1oiEkjUUNd9/RcSigV3fe34nuPoqV1Ik00AHjl4KkTFxhNav7NuG,Admin,2023-07-28T23:54:23.043Z,2023-07-28T23:54:23.043Z,0
+64c455b32f5ebe20cb72c349,Juan Gonzalez,54563221,jupagolab@gmail.com,JuanPa,$2a$10$bXD29RooSqXHLLde8.RJDOuqfHTRV4dHplilrx/IFShTHkH73/Blu,Admin,2023-07-28T23:56:35.114Z,2023-07-28T23:56:35.114Z,0

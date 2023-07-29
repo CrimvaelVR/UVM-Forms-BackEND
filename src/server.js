@@ -28,11 +28,13 @@ const usuariosRuta = require('./routes/usuario');
 const formularioRuta = require('./routes/formularios')
 const indexRuta = require('./routes/index')
 const busquedaRuta = require('./routes/busqueda')
+const landingRuta = require('./routes/landing')
 
 app.use('/usuarios', usuariosRuta);
 app.use('/formularios', formularioRuta)
 app.use('/index', indexRuta)
 app.use('/busqueda', busquedaRuta)
+app.use('/', landingRuta)
 
 //ARCHIVOS ESTATICOS
 

@@ -11,14 +11,18 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
-    padding: 50px;
+    padding: 30px 50px;
     box-sizing: border-box;
 }
 
 .textInfo {
     display: flex;
     align-items: center;
-    margin: 50px 0 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #1d555b;
+    border-radius: 15px;
+    border-style: dashed;
 }
 
 .textInfo p {
@@ -34,6 +38,15 @@
     align-items: center;
     gap: 20px;
     width: 100%;
+    background-color: #e4e4e4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.features p {
+    padding: 0 15px 5px;
+    border-bottom: 2px solid #1d555b;
 }
 
 .list {
@@ -46,14 +59,13 @@
 .thing {
     display: flex;
     align-items: center;
-    font: bold 1rem Arial;
     gap: 10px;
+    color: #1d555b;
 }
 
 #icon{
-    color: #5C8D89;
-    font-size: 40px;
-    border-color: #5C8D89;
+    font-size: 30px;
+    border-color: #1d555b;
 }
 
 a {
@@ -77,12 +89,24 @@ a {
 }
 
 .registerButton {
-    background-color: #5C8D89;
+    background-color: #1d555b;
     color: #ffffff;
     border: none;
 }
 
 .loginButton {
-    border: 2px solid #5C8D89;
-    color: #5C8D89;
+    border: 2px solid #1d555b;
+    color: #1d555b;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    height: 450px;
+    width: auto;
+    box-shadow: 0 0 3px 1px #1d555b3e;
 }

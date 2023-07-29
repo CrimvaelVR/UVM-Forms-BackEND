@@ -9,21 +9,20 @@
   
   /* Contenedor principal del footer */
   .footer {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #222;
     color: white;
     font-family: Arial, sans-serif;
-    padding: 2rem 0; /* Agregamos un espacio alrededor del contenido */
+    padding: 1rem 0; /* Agregamos un espacio alrededor del contenido */
   }
   
   /* Primer nivel del footer: logo de la compañía */
   .footer-logo {
-    width: 8%;
-    height: 8%;
-  
-    animation: spin 5s infinite;
+    width: 2%;
+    height: 2%;
   }
   
   /* Segundo nivel del footer: navegación */
@@ -32,7 +31,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     width: 80%;
-    margin-top: 2rem; /* Agregamos un espacio alrededor del contenido */
   }
   
   /* Cada columna de la navegación */
@@ -56,7 +54,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 2rem; /* Agregamos un espacio alrededor del contenido */
   }
   
   /* Cada icono de las redes sociales */
@@ -78,9 +75,13 @@
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin-top: 2rem; /* Agregamos un espacio alrededor del contenido */
   }
   
+  .footer-legal-column p a{
+    text-decoration: none;
+    color: white;
+  }
+
   /* Estilos para pantallas pequeñas */
   @media screen and (max-width: 900px) {
     .footer {
