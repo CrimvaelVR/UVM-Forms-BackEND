@@ -2,18 +2,38 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/usuario-c');
 const { verificarSesion, verifyToken } = require('../middlewares/auth');
+const { checkRole } = require("../middlewares/auth")
 
 // Ruta para obtener todos los usuarios (GET)
-router.get('/', controller.obtenerUsuarios);
+router.get('/', 
+function(req, res, next){
+  var roles = ["admin"];
+  checkRole(req, res, next, roles)
+}, 
+controller.obtenerUsuarios);
 
 // Ruta para obtener un usuario por su id (GET)
-router.get('/id/:id', controller.obtenerUsuarioPorId);
+router.get('/id/:id', 
+function(req, res, next){
+  var roles = ["admin"];
+  checkRole(req, res, next, roles)
+}, 
+controller.obtenerUsuarioPorId);
 
 // Ruta para actualizar un usuario por su id (PUT)
-router.put('/id/:id', controller.actualizarUsuarioPorId);
+router.put('/id/:id', 
+function(req, res, next){
+  var roles = ["admin"];
+  checkRole(req, res, next, roles)
+}, 
+controller.actualizarUsuarioPorId);
 
 // Ruta para eliminar un usuario por su id (DELETE)
-router.delete('/id/:id', controller.eliminarUsuarioPorId);
+router.delete('/id/:id', 
+function(req, res, next){
+  var roles = ["admin"];
+  checkRole(req, res, next, roles)
+}, controller.eliminarUsuarioPorId);
 
 // Ruta para crear un usuario (POST)
 router.post('/crear', controller.crearUsuario);
