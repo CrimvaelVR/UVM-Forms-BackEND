@@ -17,37 +17,41 @@ class formularioController {
       const decoded = jwt.decode(token);
       // Obtener el nombre del autor del token
       const nombreAutor = decoded.usuario;
-  
       // Buscar al autor por su nombre en la base de datos
       users.findOne({usuario: nombreAutor})
         .then(autor => {
           // Si se encuentra al autor, obtener su id
           if (autor) {
-            const id_Autor = autor._id;
-  
+            const id_Autor = autor.id;
             // Buscar los formularios existentes para obtener el último id
             forms.find()
               .then(formularios => {
                 let ultimoId;
-  
+
                 if (formularios == ""){
                   ultimoId = 1;
                 }else{
-                  const ultimaPregunta = formularios[formularios.length-1].preguntas;
-                  ultimoId = ultimaPregunta[ultimaPregunta.length-1].id + 1;
+                  const ultimaPregunta = formularios[formularios.length - 1].preguntas;
+                  ultimoId = ultimaPregunta[ultimaPregunta.length - 1].id + 1;
                 }
   
-                // Crear un array de preguntas a partir de los datos del formulario
-                const preguntasObj = Object.keys(datos)
-                  .filter(clave => clave.startsWith("pregunta"))
-                  .map(clave => datos[clave]);
-                
-                const preguntas = preguntasObj.map((pregunta, index) => ({
-                  id: index + ultimoId,
-                  texto: pregunta,
-                  tipo: "",
-                  opciones: "",
-                }));
+                const preguntas = [];
+                let ultimoId1
+                for (let i = 1; datos[`textoPregunta${i}`]; i++) {
+
+                  if (i === 1){
+                    ultimoId1 = ultimoId
+                  }else {
+                    ultimoId1 = ultimoId1 + 1
+                  }
+                  const pregunta = {};
+                  pregunta.id = ultimoId1
+                  pregunta.texto = datos[`textoPregunta${i}`];
+                  pregunta.tipo = datos[`tipoPregunta${i}`];
+                  pregunta.opciones = pregunta.tipo === 'text' ? '' : datos[`Options${i}`];
+
+                  preguntas.push(pregunta);
+                }
   
                 // Crear un nuevo formulario con el id del autor, el título, la descripción y las preguntas
                 const nuevoformulario = new forms({id_Autor, titulo, descripcion, preguntas});
@@ -80,6 +84,24 @@ class formularioController {
         });
     } catch (error) {
       res.status(500).json({mensaje: 'Error al crear el formulario', error});
+    }
+  };
+  
+
+  verCrearFormulario = async (req, res) => {
+    try {
+
+      const token = req.cookies.token;
+      // Decodificar el token sin verificar su firma
+      const decoded = jwt.decode(token);
+      // Obtener el nombre de usuario del token
+      const username = decoded.usuario;
+      const user = username
+
+      res.status(200).render('formularios-crear', {user: user});
+
+    } catch (error) {
+      res.status(500).json({mensaje: 'Error al obtener el usuario', error});
     }
   };
 

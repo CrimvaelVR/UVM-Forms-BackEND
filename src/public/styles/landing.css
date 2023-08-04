@@ -1,0 +1,112 @@
+.image {
+    width: 50%;
+}
+
+.info {
+    display: flex;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+.textInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #1d555b;
+    border-radius: 15px;
+    border-style: dashed;
+}
+
+.textInfo p {
+    font-size: 2.8rem;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background-color: #e4e4e4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.features p {
+    padding: 0 15px 5px;
+    border-bottom: 2px solid #1d555b;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.thing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1d555b;
+}
+
+#icon{
+    font-size: 30px;
+    border-color: #1d555b;
+}
+
+a {
+    text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.registerButton, .loginButton {
+    border-radius: 5px;
+    width: 180px;
+    height: 70px;
+    font-size: 1.7rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.registerButton {
+    background-color: #1d555b;
+    color: #ffffff;
+    border: none;
+}
+
+.loginButton {
+    border: 2px solid #1d555b;
+    color: #1d555b;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    height: 450px;
+    width: auto;
+    box-shadow: 0 0 3px 1px #1d555b3e;
+}

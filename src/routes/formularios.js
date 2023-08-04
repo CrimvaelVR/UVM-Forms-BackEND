@@ -8,10 +8,7 @@ const controller2 = require('../controllers/respuestas-c')
 router.post('/crear', controller.crearFormulario);
 
 // Ruta para mostrar el formulario de crear formularios (GET)
-router.get('/crear', (req, res) => {
-    // Renderizar el archivo EJS
-    res.render('formularios-crear.ejs')
-});
+router.get('/crear', controller.verCrearFormulario)
 
 router.get('/:id', controller.obtenerFormularioId);
 

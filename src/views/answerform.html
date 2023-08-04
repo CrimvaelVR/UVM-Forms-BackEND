@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVM Forms</title>
+  <link rel="shortcut icon" href="media/">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/answerform.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="/" class="logo">
+                <img src="resources/uvm.png" alt="Logo">
+                <p>UVM Forms</p>
+            </a>
+          
+          <div class="header-right">
+            </div>
+
+            <a href="#" id="inicio">Inicio</a>
+            <a href="#" id="formularios">Mis formularios</a>
+
+            <i class='bx bx-user-circle' id="profileIcon"></i> <p>Usuario</p>
+                
+          </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <form class="answerForm">
+                <h2>TITULO DEL FORMULARIO</h2>
+                <p class="formDescription">Descripcion del formulario hola hola hola hola hola hola hola</p>
+                <div class="questions">
+                    <p class="questionTitle">Pregunta 1</p>
+                    <input type="text" id="questionText" placeholder="Respuesta">
+
+                    <p class="questionTitle">Pregunta 1111</p>
+                    <input type="text" id="questionText" placeholder="Respuesta">
+
+                    <p class="questionTitle">Pregunta 2</p>
+                    <select id="questionSelect">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Opcion 1</option>
+                        <option value="2">Opcion 2</option>
+                        <option value="3">Opcion 3</option>
+                    </select>
+
+                    <p class="questionTitle">Pregunta 3</p>
+                    <div class="radioOptions">
+                        <span class="option"><input type="radio" name="opciones" value="opcion1">Opción 1</span>
+                        <span class="option"><input type="radio" name="opciones" value="opcion2">Opción 2</span>
+                        <span class="option"><input type="radio" name="opciones" value="opcion3">Opción 3</span>
+                    </div>
+
+                    <button class="submit">ENVIAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

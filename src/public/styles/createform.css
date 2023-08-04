@@ -1,0 +1,140 @@
+body {
+    font-family: Calibri;
+}
+
+.createForm{
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #1d555b;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.createForm h1 {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.createQuestion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0 20px 0;
+    margin: 10px 0 10px 0 ;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.createQuestion1{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0 20px 0;
+    margin: 10px 0 10px 0 ;
+}
+
+.createQuestion label, .createQuestion1 label{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.createQuestion input[type="text"], .createQuestion1 textarea, .createQuestion1 input[type="text"] {
+    width: 30%;
+    border: 3px solid #1d555b;
+    outline: none;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: #efefef;
+}
+
+.createQuestion1 textarea {
+    width: 100%;
+}
+
+.createQuestion input[type="text"]::placeholder,.createQuestion1 textarea::placeholder {
+    color: #1d555b;
+}
+
+select {
+    width: 30%;
+    border: 3px solid #1d555b;
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+    color: #1d555b;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+#optionsContainer {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.addQuestion {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #bcd4de;
+    color: #13373b;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 1px 1px 3px 0 #525252;
+}
+
+#questionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#questionsContainer h2 {
+    text-align: center;
+}
+
+
+.question{
+    background-color: #13373b;
+    padding: 20px;
+    border-radius: 20px;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.questionNew{
+    background-color: #13373b;
+    padding: 20px;
+    border-radius: 20px;
+    animation-name: bounceIn;
+    animation-duration: 1s;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+    
+    
+}
+
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    25% {
+      transform: scale(1.01);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(0.99);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1.01);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }

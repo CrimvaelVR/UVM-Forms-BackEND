@@ -20,6 +20,9 @@ class RespuestasController {
 
           const postRespuestas = req.body;
           const respuestas = [];
+          console.log(postRespuestas)
+
+          
 
           for (let i = 0; i < postRespuestas.id.length; i++) {
             respuestas[i] = {

@@ -1,0 +1,64 @@
+<h1>Crear una respuesta</h1>
+<h2><%- formulario.titulo %></h2>
+<p><%- formulario.descripcion %></p>
+<form action="" method="POST">
+
+  <% if(preguntas == '') { %>
+
+    <h3>No tienes formularios registrados</h3>
+
+  <% } else { %>
+
+      <% for (i = 0; i < preguntas.length; i++) { %>
+
+        <% if(preguntas[i].tipo == 'text'){ %>
+
+          <div>
+            <label for="" ><%- preguntas[i].texto %></label>
+            <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+            <input type="text" name="Texto_Respuesta">
+          </div>
+
+        <% } %>
+
+        <% if(preguntas[i].tipo == 'options'){  %>
+          <% opciones = preguntas[i].opciones %>
+          <div>
+            <label for="" ><%- preguntas[i].texto %></label>
+            <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+            
+            <% for(f=0;  f < opciones.length ; f++){ %>
+            <div class="option">
+              <input type="checkbox" name="options">
+              <label>  <%- opciones[f] %> </label>
+            </div>
+            <% } %>
+          </div>
+
+        <% } %>
+
+        <% if(preguntas[i].tipo == 'select'){ %>
+
+          <% opciones = preguntas[i].opciones %>
+          <div>
+            <label for="" ><%- preguntas[i].texto %></label>
+            <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+            
+            <% for(f=0;  f < opciones.length ; f++){ %>
+            <div class="option">
+              <input type="radio" name="options">
+              <label>  <%- opciones[f] %> </label>
+            </div>
+            <% } %>
+          </div>
+
+        <% } %>
+
+      <% } %>
+
+  <% } %>
+
+  
+
+  <button type="submit">Enviar respuesta</button>
+</form>

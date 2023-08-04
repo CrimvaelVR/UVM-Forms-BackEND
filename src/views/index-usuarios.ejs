@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVM Forms</title>
+    <link rel="shortcut icon" href="resources/uvmicon.png">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header>
+        <div class="header">
+          <a href="/index" class="logo">
+                <img src="resources/uvm.png" alt="Logo">
+                <p>UVM Forms</p>
+            </a>
+          
+          <div class="header-right">
+            <div class="formBuscar">
+                <a id="buscar" style="padding: 0;">
+                    <i class='bx bxs-search' id="searchIcon"></i>
+                </a>
+                <input type="text" placeholder="Buscar" id="textoBuscar">
+            </div>
+
+            <a href="#" id="inicio">Inicio</a>
+            <a href="/index" id="formularios">Mis formularios</a>
+
+            <% if(user == '') { %>
+  
+                <a href="#">Ingresar</a>
+                <a href="#">Registrar</a>
+
+            <% } else { %>
+
+                <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+                
+            <% } %>
+          </div>
+        </div>
+      </header>
+
+
+    <main>
+        <form action="/index/disconnect" method="POST">
+            <button type="submit">Logout</button>
+          </form>
+
+
+        <p class="formsText">Tus formularios</p>
+        <div class="forms">
+
+            <a class="cardFormNuevo" href="/formularios/crear" id="createButton"> 
+                <p class="formTitleNuevo"> Crear nuevo formulario</p>
+                <i class='bx bx-plus' id="plusIcon"></i>
+            </a>
+
+                <% for (i = 0; i < formularios.length; i++) { %>
+                    <div class="cardForm">
+                        <p class="formTitle"><%= formularios[i].titulo %></p>
+                        <p class="formDescription"><%= formularios[i].descripcion %></p>
+                        <a href="/formularios/<%= formularios[i]._id %>" style="text-decoration: none; color: white; background-color: #88c426; padding: 10px; border-radius: 30px; margin-top: 20px;">Ver respuestas</a>
+                    </div>
+                <% } %>
+
+      
+        </div>
+    </main>
+
+
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+        const buscar = document.getElementById('buscar');
+        const textoBuscar = document.getElementById('textoBuscar');
+
+        function asignarURL() {
+            const textoBuscarr = textoBuscar.value;
+            buscar.href = '/busqueda/' + textoBuscarr;
+        }
+
+        buscar.addEventListener('click', asignarURL);
+
+        textoBuscar.addEventListener("keydown", function(event) {
+
+            if (event.keyCode == 13) {
+                buscar.click();
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>

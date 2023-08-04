@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVM Forms</title>
+  <link rel="shortcut icon" href="media/uvmicon.png">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/createform.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <a href="/" class="logo">
+          <img src="/resources/uvm.png" alt="Logo">
+          <p>UVM Forms</p>
+      </a>
+    
+    <div class="header-right">
+
+      <a href="#" id="inicio">Inicio</a>
+      <a href="#" id="formularios">Mis formularios</a>
+
+      <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+          
+    </div>
+  </div>
+  </header>
+  <main>
+    <div class="createForm">
+      <h1>Crear formulario</h1>
+
+      <form method="post" class="createQuestion1">
+        <label for="">Título del formulario:</label>
+        <input type="text" name="titulo" id="titulo">
+        <label for="">Descripción del formulario:</label>
+        <textarea type="text" name="descripcion" id="descripcion"> </textarea>
+
+        <div class="createQuestion" id="questionsContainer">
+
+          <div class="question">
+            <label>Pregunta</label> 
+            <input type="text" class="question-text" name="textoPregunta1" placeholder="Escribe tu pregunta aquí">
+          
+            <label>Tipo de Pregunta</label>
+            <select id="questionType" name="tipoPregunta1">
+              <option value="text">Pregunta de texto libre</option>
+              <option value="select">Pregunta de selección</option>
+              <option value="options">Pregunta de opciones</option>
+            </select>
+          
+            <div class="options-container" id="options-container" style="display: none;"></div>
+          </div>
+          
+        </div>
+
+        <input type="submit" value="Enviar">
+
+      </form>
+
+
+      <button class="addQuestion" id="addQuestion">Añadir Pregunta</button>
+
+    </div>
+  </main>
+  <script src="/scripts/form.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

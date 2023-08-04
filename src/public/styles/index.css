@@ -1,0 +1,158 @@
+main {
+    padding: 20px 40px;
+}
+
+/*
+#809e3e verde culo
+#860000 rojo
+#1d555b verde header
+#88c426 verde maria
+
+*/
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createButton {
+    border: none;
+    background-color: #007f5f;
+    color: white;
+    font-size: 1.8rem;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.createButton:hover {
+    background-color: #860000;
+    color:white;
+  }
+
+.formsText {
+    margin: 20px 0;
+    padding-top: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-top: 2px solid #1d555b;
+    color: #88c426;
+}
+
+.forms {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #1d555b;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.cardForm {
+    background-color: #F4F9F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 24%;
+    height: 250px;
+    box-shadow: 1px 1px 5px 1px #686868;
+    border-top: 10px solid #809e3e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.cardFormNuevo{
+    background-color: #F4F9F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 24%;
+    height: 250px;
+    box-shadow: 1px 1px 5px 1px #686868;
+    border-top: 10px solid #860000;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    justify-content: center;
+    
+}
+
+.formTitleNuevo {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #860000;
+    font-weight: bold;
+}
+
+.formTitle {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #809e3e;
+    font-weight: bold;
+}
+
+.formTitleResp {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #809e3e;
+    font-weight: bold;
+}
+
+.cardFormResp {
+    background-color: #F4F9F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 33.3%;
+    height: 250px;
+    box-shadow: 1px 1px 5px 1px #686868;
+    border-top: 10px solid #809e3e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formDescriptionResp {
+    font-size: 15px;
+    text-align: center;
+    color: #555555;
+}
+
+.formDescription {
+    font-size: 15px;
+    text-align: center;
+    color: #555555;
+}
+
+#plusIcon {
+    font-size: 100px;
+    color: #860000;
+}
+
+#searchIcon{
+    font-size: 20px;
+    color: white;
+}
+
+.formBuscar{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.formBuscar input{
+    border-radius: 20px;
+    text-indent: 10px;
+    height: 30px;
+    padding: 10px;
+}
