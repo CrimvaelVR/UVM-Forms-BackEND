@@ -1,7 +1,7 @@
-_id,id_encuesta,id_User,respuestas[0].id_pregunta,respuestas[1].id_pregunta,respuestas[2].id_pregunta,respuestas[0].texto_respuesta,respuestas[1].texto_respuesta,respuestas[2].texto_respuesta,respuestas[0].opcion_selecicionada,respuestas[1].opcion_selecicionada,respuestas[2].opcion_selecicionada,createdAt,updatedAt,__v
-64c46d9fc3c345b564593b6c,64c46d67c3c345b564593b52,64c454f82f5ebe20cb72c345,1,2,3,Azul,Me muero,Ahi mas o menos,,,,2023-07-29T01:38:39.596Z,2023-07-29T01:38:39.596Z,0
-64c47238a21a84360f0cb746,64c471c3a21a84360f0cb718,64c455b32f5ebe20cb72c349,7,8,9,Pele,Messi,Real VARdrid,,,,2023-07-29T01:58:16.618Z,2023-07-29T01:58:16.618Z,0
-64c4724aa21a84360f0cb759,64c46d67c3c345b564593b52,64c455b32f5ebe20cb72c349,1,2,3,Morado,F,Bien,,,,2023-07-29T01:58:34.285Z,2023-07-29T01:58:34.285Z,0
-64c4728fa21a84360f0cb78d,64c471c3a21a84360f0cb718,64c454f82f5ebe20cb72c345,7,8,9,CR7 siuuuuuu,Messi obvio,VARdrid,,,,2023-07-29T01:59:43.619Z,2023-07-29T01:59:43.619Z,0
-64c472a3a21a84360f0cb79a,64c4720fa21a84360f0cb725,64c454f82f5ebe20cb72c345,10,11,12,Algo,Javascrpt,Maomenos,,,,2023-07-29T02:00:03.965Z,2023-07-29T02:00:03.965Z,0
-64c47331a21a84360f0cb7c8,64c47302a21a84360f0cb7a8,64c4552f2f5ebe20cb72c347,13,14,15,Fifa,Fifa,Fifa,,,,2023-07-29T02:02:25.012Z,2023-07-29T02:02:25.012Z,0
+_id,id_encuesta,id_User,respuestas[0].id_pregunta,respuestas[1].id_pregunta,respuestas[2].id_pregunta,respuestas[3].id_pregunta,respuestas[0].texto_respuesta,respuestas[1].texto_respuesta,respuestas[2].texto_respuesta,createdAt,updatedAt,__v,respuestas[3].texto_respuesta[0],respuestas[3].texto_respuesta[1],respuestas[3].texto_respuesta[2]
+64c46d9fc3c345b564593b6c,64c46d67c3c345b564593b52,64c454f82f5ebe20cb72c345,1,2,3,,Azul,Me muero,Ahi mas o menos,2023-07-29T01:38:39.596Z,2023-07-29T01:38:39.596Z,0,,,
+64c47238a21a84360f0cb746,64c471c3a21a84360f0cb718,64c455b32f5ebe20cb72c349,7,8,9,,Pelé,Messi,Real VARdrid,2023-07-29T01:58:16.618Z,2023-07-29T01:58:16.618Z,0,,,
+64c4724aa21a84360f0cb759,64c46d67c3c345b564593b52,64c455b32f5ebe20cb72c349,1,2,3,,Morado,F,Bien,2023-07-29T01:58:34.285Z,2023-07-29T01:58:34.285Z,0,,,
+64c4728fa21a84360f0cb78d,64c471c3a21a84360f0cb718,64c454f82f5ebe20cb72c345,7,8,9,,Cristiano Ronaldo,Messi,VARdrid,2023-07-29T01:59:43.619Z,2023-07-29T01:59:43.619Z,0,,,
+64c472a3a21a84360f0cb79a,64c4720fa21a84360f0cb725,64c454f82f5ebe20cb72c345,10,11,12,,Algo,Javascript,Si,2023-07-29T02:00:03.965Z,2023-07-29T02:00:03.965Z,0,,,
+64cd9825a4eeeb604a7b81ec,64cd8927f1924c058094f08f,64c454f82f5ebe20cb72c345,16,17,18,19,Nada,12,Muchisismo,2023-08-05T00:30:29.287Z,2023-08-05T00:30:29.287Z,0,JavaScript,C,Python
