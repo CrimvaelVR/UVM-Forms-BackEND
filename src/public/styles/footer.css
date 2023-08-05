@@ -21,8 +21,9 @@
   
   /* Primer nivel del footer: logo de la compañía */
   .footer-logo {
-    width: 2%;
-    height: 2%;
+
+    width: 10%;
+    height: 10%;
   }
   
   /* Segundo nivel del footer: navegación */

@@ -1,0 +1,110 @@
+main {
+    padding: 20px 40px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/contacto.jpg"); 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+#809e3e verde culo
+#860000 rojo
+#1d555b verde header
+#88c426 verde maria
+
+*/
+
+form {  padding: 20px;
+    margin-top: 100px;
+    display: flex;  flex-wrap: wrap;
+    border-radius: 5px;  max-width: 100vh; /* Ancho máximo para evitar que se extienda demasiado */
+    margin: 0 auto; /* Centrar el formulario en la página */
+}
+
+form{
+    margin-top: 20px;
+}
+
+.user-details {
+    background-color: #F4F9F4;  padding: 4%;
+    padding: 4%;
+    border-radius: 10px;  width: 100%;
+    width: 100%;
+    
+    box-shadow: 1px 1px 5px 1px #686868;  border-top: 10px solid #809e3e;
+    border-top: 10px solid #809e3e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 2.5rem;
+}
+
+input, textarea{
+    padding: 1% 2%;
+}
+
+input[type='submit']{
+    background-color: #809e3e;
+    color: #FFF;
+}
+
+#plusIcon {
+    font-size: 100px;
+    color: #860000;
+}
+
+#searchIcon{
+    font-size: 20px;
+    color: white;
+}
+
+
+
+@media (max-width: 768px) {
+
+    form {
+        flex-direction: column;
+    }
+
+    .user-details {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 5ch;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+
+    input[type='submit'] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    form {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .user-details {
+        border-top: none;
+    }
+
+    input, textarea {
+        padding: 0.5rem 1rem;
+    }
+
+    input[type='submit'] {
+        margin-top: 10px;
+    }
+}
+
+#mostrar-imagen {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
