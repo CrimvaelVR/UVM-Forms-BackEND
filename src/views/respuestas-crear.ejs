@@ -16,7 +16,7 @@
           <div>
             <label for="" ><%- preguntas[i].texto %></label>
             <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
-            <input type="text" name="Texto_Respuesta">
+            <input type="text" name="Texto_Respuesta<%- i+1 %>">
           </div>
 
         <% } %>
@@ -29,7 +29,7 @@
             
             <% for(f=0;  f < opciones.length ; f++){ %>
             <div class="option">
-              <input type="checkbox" name="options">
+              <input type="checkbox" name="Texto_Respuesta<%- i+1 %>" value="<%-opciones[f] %>">
               <label>  <%- opciones[f] %> </label>
             </div>
             <% } %>
@@ -46,7 +46,7 @@
             
             <% for(f=0;  f < opciones.length ; f++){ %>
             <div class="option">
-              <input type="radio" name="options">
+              <input type="radio" name="Texto_Respuesta<%- i+1 %>" value="<%- opciones[f] %>">
               <label>  <%- opciones[f] %> </label>
             </div>
             <% } %>

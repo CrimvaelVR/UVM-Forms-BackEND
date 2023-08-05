@@ -19,18 +19,18 @@ class RespuestasController {
           const id_User = usuario[0].id
 
           const postRespuestas = req.body;
-          const respuestas = [];
-          console.log(postRespuestas)
 
-          
-
-          for (let i = 0; i < postRespuestas.id.length; i++) {
-            respuestas[i] = {
-              id_pregunta: Number(postRespuestas.id[i]),
-              texto_respuesta: postRespuestas.Texto_Respuesta[i],
-              opcion_selecicionada: ''
+          let contar = 0
+          const respuestas = postRespuestas.id.map(id => {
+            const numId = parseInt(id)
+            contar += 1
+            const respuesta = {
+              'id_pregunta': numId,
+              'texto_respuesta': postRespuestas[`Texto_Respuesta${contar}`]
             };
-          }
+            return respuesta;
+          });
+
           const nuevaRespuesta = new answers({id_encuesta, id_User, respuestas});
           await nuevaRespuesta.save();
           res.status(201).json({mensaje: 'Respuesta agreagada correctamente', respuesta: nuevaRespuesta});
