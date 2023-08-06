@@ -50,6 +50,7 @@ main {
     border-radius: 5px;
     height: 100%;
     width: 100%;
+    margin-bottom: 23vh;
 }
 
 .cardForm {
@@ -156,3 +157,21 @@ main {
     height: 30px;
     padding: 10px;
 }
+
+
+@media screen and (max-width: 768px) {
+    .createForm {
+      width: 90%;
+    }
+    
+    .cardForm,
+    .cardFormNuevo,
+    .cardFormResp {
+      width: 100%;
+    }
+    
+    .forms {
+      margin-bottom: 10vh;
+    }
+}
+  

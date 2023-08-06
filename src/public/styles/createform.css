@@ -1,6 +1,9 @@
-body {
-    font-family: Calibri;
+
+body{
+    background-color: #809e3e
 }
+
+
 
 .createForm{
     margin: 20px auto;
@@ -9,6 +12,8 @@ body {
     background-color: #1d555b;
     padding: 20px;
     color: #ffffff;
+    margin-top: 12ch;
+    margin-bottom: 12ch;
 }
 
 .createForm h1 {
@@ -138,3 +143,53 @@ select {
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .createForm {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .createForm h1 {
+      font-size: 1.5rem;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .createQuestion label, .createQuestion1 label {
+      font-size: 1rem;
+    }
+    
+    .createQuestion input[type="text"], .createQuestion1 textarea, .createQuestion1 input[type="text"] {
+      width: 100%;
+      padding: 5px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 5px;
+    }
+    
+    .addQuestion {
+      font-size: 0.8rem;
+      padding: 5px 0;
+    }
+    
+    #questionsContainer h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .createQuestion, .createQuestion1 {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .createQuestion, .createQuestion1 {
+      padding: 10px 0 10px 0;
+    }
+  }
+  
