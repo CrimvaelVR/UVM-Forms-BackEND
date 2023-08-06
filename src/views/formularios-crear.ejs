@@ -5,35 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UVM Forms</title>
   <link rel="shortcut icon" href="media/uvmicon.png">
-  <link rel="stylesheet" href="/styles/styles.css">
   <link rel="stylesheet" href="/styles/createform.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header>
     <div class="header">
-      <a href="/" class="logo">
-          <img src="/resources/uvm.png" alt="Logo">
-          <p>UVM Forms</p>
+      <a href="#" class="logo"><img src="/resources/uvm.png" alt="Logo">
+        <p>UVM Forms</p>
       </a>
-    
-    <div class="header-right">
+      <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-      <a href="#" id="inicio">Inicio</a>
-      <a href="#" id="formularios">Mis formularios</a>
+      <div class="header-right">
+        <div class="formBuscar">
+          <a id="buscar" style="padding: 0;" >
+              <i class='bx bxs-search' id="searchIcon"></i>
+          </a>
+          <input type="text" placeholder="Buscar" id="textoBuscar">
+      </div>
+      <a href="/" id="inicio" onclick="showLoader()">Inicio</a>
+      <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
+      <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
+      
+        <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
 
-      <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
-          
+        <form action="/index/disconnect" method="POST" class="logout-form" >
+          <button class="logout-btn" type="submit">Logout</button>
+        </form>
+        
+  
+      </div>
+      </div>
     </div>
-  </div>
   </header>
+  <script src="/scripts/header.js"></script>
+
+  <script>
+    var logoutBtn = document.querySelector(".logout-btn");
+    logoutBtn.addEventListener("click", function() {  showLoader();  });
+  </script>
+
+
   <main>
-    <div class="createForm">
+    <section class="createForm">
       <h1>Crear formulario</h1>
 
-      <form method="post" class="createQuestion1">
+      <form method="post" class="createQuestion1"  onsubmit="showLoader()">
         <label for="">Título del formulario:</label>
-        <input type="text" name="titulo" id="titulo">
+        <input type="text" name="titulo" id="titulo" required>
         <label for="">Descripción del formulario:</label>
         <textarea type="text" name="descripcion" id="descripcion"> </textarea>
 
@@ -55,16 +84,81 @@
           
         </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" >
 
       </form>
 
 
       <button class="addQuestion" id="addQuestion">Añadir Pregunta</button>
 
-    </div>
+    </section>
+
+    
   </main>
+  <footer class="footer">
+    <!-- Primer nivel: logo de la compañía -->
+    <img src="/resources/uvm.png" alt="Logo de la compañía" class="footer-logo">
+    <!-- Segundo nivel: navegación -->
+    <nav class="footer-nav">
+      <!-- Primera columna: inicio, sobre nosotros, contacto -->
+      <div class="footer-nav-column">
+        <a href="#" class="footer-nav-link">Inicio</a>
+        <a href="https://uvm.edu.ve/identidad-uvm/" class="footer-nav-link">Sobre nosotros</a>
+        <a href="https://uvm.edu.ve/normativa-uvm/" class="footer-nav-link">Historia</a>
+      </div>
+      <!-- Segunda columna: -->
+      <div class="footer-nav-column">
+        <a href="https://uvm.edu.ve/estructura-universitaria/" class="footer-nav-link">Estructura Universitaria</a>
+        <a href="https://uvm.edu.ve/normativa-uvm/" class="footer-nav-link">Normativa</a>
+        <a href="https://uvm.edu.ve/investigacion-y-extension/" class="footer-nav-link">Investigación y Extensión</a>
+      </div>
+    <!-- Tercer nivel: redes sociales -->
+    <div class="footer-social">
+      <!-- Icono de Facebook -->
+      <a href="https://www.facebook.com/univalledelmomboy/?locale=es_LA" class="footer-social-icon">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <!-- Icono de Twitter -->
+      <a href="https://twitter.com/univallemomboy?lang=es" class="footer-social-icon">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+      <!-- Icono de Instagram -->
+      <a href="https://www.instagram.com/univalledelmomboy/" class="footer-social-icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <!-- Icono de YouTube -->
+      <a href="https://www.youtube.com/channel/UCyPGGFu2WNlBP1BMvholYWA" class="footer-social-icon">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <!-- Cuarto nivel: detalles legales -->
+    <div class="footer-legal">
+      <!-- Primera columna: derechos reservados -->
+      <div class="footer-legal-column">
+        <p class="footer-legal-text">&copy; 2023 Universidad "Valle del Momboy"</p>
+      </div>
+      <!-- Segunda columna: términos y condiciones -->
+      <div class="footer-legal-column">
+        <p class="footer-legal-text"><a href="https://revistav.uvm.edu.ve/articulos/cs07s7Articulo1vol13num12019.pdf">Términos y condiciones</a></p>
+      </div>
+      <!-- Tercera columna: política de privacidad -->
+      <div class="footer-legal-column">
+        <p class="footer-legal-text"><a href="https://repositorio.uvm.edu.ve/items/b8397abb-5c25-4557-994b-a1a6fbd3d4ce">Reglamento</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/loader.js"></script>
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
+
+
+
+
   <script src="/scripts/form.js"></script>
+  <script src="/scripts/buscarform.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>

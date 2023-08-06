@@ -1,0 +1,64 @@
+
+
+
+.error-container {
+    max-width: 100ch;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 2ch;
+    border-radius: 10px;
+    height: 100ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-icon {
+    font-size: 20rem;
+    color: #ff0000;
+}
+
+.error-title {
+    font-size: 4rem;
+    color: #333333;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    color: #666666;
+}
+
+.error-link {
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #333333;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .error-container {
+        height: auto;
+        margin-top: 10ch;
+
+    }
+    
+    .error-icon {
+        font-size: 10rem;
+    }
+    
+    .error-title {
+        font-size: 2rem;
+    }
+    
+    .error-message {
+        font-size: 1rem;
+    }
+    
+    .error-link {
+        font-size: 0.8rem;
+    }
+}

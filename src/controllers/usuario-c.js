@@ -10,7 +10,39 @@ class UsuarioController {
         const { nombre, cedula, correo, usuario, contrasena, rol } = req.body;
         const nuevoUsuario = new user({ nombre, cedula, correo, usuario, contrasena, rol });
         await nuevoUsuario.save();
-        res.status(201).json({ mensaje: 'Usuario creado correctamente', usuario: nuevoUsuario });
+        // En lugar de enviar un JSON, enviamos un script
+        res.send(
+          `<html>
+          <link rel="stylesheet" href="/styles/styles.css">
+            <head>
+              <style>
+              *{
+                background-color: #1d555b;
+              }
+                /* Estilo de la alerta */
+                .alert {
+                  position: fixed; /* Posición fija */
+                  top: 50%; /* A la mitad de la altura */
+                  left: 50%; /* A la mitad del ancho */
+                  transform: translate(-50%, -50%); /* Centrar el elemento */
+                  padding: 20px; /* Espacio interno */
+                  font-size: 24px; /* Tamaño de la fuente */
+                  background-color: #88c426; /* Color de fondo verde */
+                  color: white; /* Color del texto blanco */
+                }
+              </style>
+            </head>
+            <body>
+              <div class="alert">
+              <script>
+                // Redirigir al login después de 3 segundos
+                setTimeout(() => {
+                  window.location.href = '/'; // La URL a la que quieres redirigir
+                }, 3000);
+              </script>
+            </body>
+          </html>`
+        );
       });
     } catch (error) {
       console.log(error);
@@ -74,7 +106,7 @@ class UsuarioController {
   async iniciarSesion(req, res) {
     try {
 
-      // Verificar si se proporcionaron las credenciales
+
       if (!req.body.usuario || !req.body.contrasena) {
         return res.status(400).json({ mensaje: 'Se requiere el usuario y la contraseña para iniciar sesión.' });
       }

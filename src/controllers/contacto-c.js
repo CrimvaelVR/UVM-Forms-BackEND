@@ -15,6 +15,7 @@ class formularioController {
     }
   };
 
+
   /*
   consultarFormularioTitulo = async (req, res) => {
     try {

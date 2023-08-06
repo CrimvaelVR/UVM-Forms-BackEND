@@ -36,6 +36,8 @@ const indexRuta = require('./routes/index');
 const busquedaRuta = require('./routes/busqueda');
 const contactoRuta = require('./routes/contacto');
 const landingRuta = require('./routes/landing');
+const errorRuta = require('./routes/error');
+
 
 app.use('/usuarios', usuariosRuta);
 app.use('/formularios', formularioRuta)
@@ -43,6 +45,7 @@ app.use('/index', indexRuta)
 app.use('/busqueda', busquedaRuta)
 app.use('/', landingRuta)
 app.use('/contacto', contactoRuta);
+app.use('/error', errorRuta)
 
 //ARCHIVOS ESTATICOS
 

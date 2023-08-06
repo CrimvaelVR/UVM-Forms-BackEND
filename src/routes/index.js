@@ -11,16 +11,20 @@ router.get('/', (req, res) => {
 */
 
 
-router.get('/',  controller.consultarFormularioUser);
+router.get('/', (req, res) => {
+    // Aplicar un tiempo de espera de 2 segundos
+    setTimeout(() => {
+      // Invocar la función del controlador con req y res
+      controller.consultarFormularioUser(req, res);
+    }, 800);
+  });
 
-router.post('/disconnect', cerrarSesion)
+router.post('/disconnect', (req, res) => {
+    // Aplicar un tiempo de espera de 2 segundos
+    setTimeout(() => {
+      // Invocar la función del controlador con req y res
+      cerrarSesion(req, res);
+    }, 800);
+  });
 
-router.get('/',
-
-    function(req, res, next){
-        var roles = ["admin"];
-        checkRole(req, res, next, roles)
-    }, 
-
-    controller.consultarFormularioUser);
 module.exports = router;
