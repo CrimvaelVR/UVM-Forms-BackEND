@@ -14,7 +14,6 @@ class RespuestasController {
           const decoded = jwt.decode(token);
           // Obtener el nombre de usuario del token
           const username = decoded.usuario;
-          const user = username
           const usuario = await users.find({usuario: username})
           const id_User = usuario[0].id
 
@@ -35,7 +34,7 @@ class RespuestasController {
           await nuevaRespuesta.save();
           res.status(201).json({mensaje: 'Respuesta agreagada correctamente', respuesta: nuevaRespuesta});
         } catch (error) {
-          res.status(500).json({mensaje: 'Error al registrar respuesta', error});
+          res.status(500).render('404', {mensaje: 'Error al registrar respuesta'})
         }
       };
 
@@ -44,7 +43,7 @@ class RespuestasController {
       Form.find({titulo: titulo}, (err, formularios) => {
         if (err) {
           console.error(err);
-          res.status(500).send('Error al buscar los formularios');
+          res.status(500).render('404', {mensaje: 'Error al buscar formularios'})
         } else {
           // Enviar los datos de los formularios a una vista que los muestre y permita acceder a ellos
           res.render('lista', {formularios: formularios});

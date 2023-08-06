@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/landing-c')
 
-router.get('/', (req, res) => {
-  setTimeout(() => {
-    res.render('landing')
-  }, 800);
-});
+router.get('/', controller.consultarUser);
+
 module.exports = router;

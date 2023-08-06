@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
-    <link rel="shortcut icon" href="resources/uvmicon.png">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/404.css">
-    <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="shortcut icon" href="/media/uvmicon.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/404.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/header.css">
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@
 
     <header>
         <div class="header">
-          <a href="#" class="logo"><img src="resources/uvm.png" alt="Logo">
+          <a href="/" class="logo"><img src="/resources/uvm.png" alt="Logo">
             <p>UVM Forms</p>
           </a>
           <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
@@ -49,7 +49,7 @@
       <!-- Aquí va el contenido de la página -->
       <div class="error-container">
         <i class="fas fa-exclamation-triangle error-icon"></i>
-        <h1 class="error-title">Página no encontrada</h1>
+        <h1 class="error-title"><%- mensaje %></h1>
         <p class="error-message">Lo sentimos, pero la página que buscas no existe o ha sido movida.</p>
         <a href="/" class="error-link" onclick="showLoader()">Volver al inicio</a>
       </div>

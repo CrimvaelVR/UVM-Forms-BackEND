@@ -1,6 +1,7 @@
 // userController.js (controlador de usuario)
 
 const contact = require('../models/contacto');
+const jwt = require('jsonwebtoken')
 
 class formularioController {
   async enviarFormulario (req, res){
@@ -11,48 +12,28 @@ class formularioController {
       res.status(201).json({ mensaje: 'Mensaje enviado correctamente', formulario: nuevoFormulario });
     } catch (error) {
       console.log(error);
-      res.status(500).json({ mensaje: 'Error al enviar el formulario', error });
+      res.status(500).render('404', {mensaje: 'Error al enviar el formulario'})
     }
   };
 
-
-  /*
-  consultarFormularioTitulo = async (req, res) => {
+  consultarUser = async (req, res) => {
     try {
-      const titulo = req.params.titulo;
-
-      const token = req.cookies.token;
-      // Decodificar el token sin verificar su firma
-      const decoded = jwt.decode(token);
-      // Obtener el nombre de usuario del token
-      const username = decoded.usuario;
-      const user = username
-
-      if (!RegExp.escape) {
-        RegExp.escape = function (s) {
-          return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-        };
-      }
-
-      var regex = new RegExp('.*' + RegExp.escape(titulo) + '.*', 'i');
-      const resultadoBusqueda = await forms.find({ titulo: regex });
-      let nombreAutor = []
-      let autores = []
-      for (let i = 0; i < resultadoBusqueda.length; i++) {
-        autores[i] = await users.findById(resultadoBusqueda[i].id_Autor);
-      }
-
-      for (let f = 0; f < autores.length; f++) {
-        nombreAutor[f] = autores[f].nombre
-      }
-
-      res.status(200).render('formularios-buscar', { resultadoBusqueda: resultadoBusqueda, titulo: titulo, user: user, autor: nombreAutor });
+        const token = req.cookies.token;
+        const decoded = jwt.decode(token);
+        let username
+        if(!token){
+            username = '';
+        }else{
+            username = decoded.usuario;
+        }
+        res.status(200).render('contacto', {user: username});
 
     } catch (error) {
-      res.status(500).json({ mensaje: 'Error al obtener el usuario', error });
+      // Si ocurre un error al crear el formulario, enviar un mensaje de error
+
+      res.status(404).render('404', {mensaje: 'Error al cargar usuario'})
     }
   };
-*/
 
 }
 

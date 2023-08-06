@@ -18,7 +18,7 @@
 
   <header>
     <div class="header">
-      <a href="#" class="logo"><img src="/resources/uvm.png" alt="Logo">
+      <a href="/" class="logo"><img src="/resources/uvm.png" alt="Logo">
         <p>UVM Forms</p>
       </a>
       <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
@@ -29,17 +29,19 @@
       </div>
 
       <div class="header-right">
-        <div class="formBuscar">
-          <a id="buscar" style="padding: 0;" >
+        <div class="formBuscar" id="formBuscar">
+          <a id="buscar" style="padding: 0;">
               <i class='bx bxs-search' id="searchIcon"></i>
           </a>
           <input type="text" placeholder="Buscar" id="textoBuscar">
-      </div>
+        </div>
       <a href="/" id="inicio" onclick="showLoader()">Inicio</a>
       <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
       <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
       
+      <div style="display: flex; align-items: center;">
         <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+      </div>
 
         <form action="/index/disconnect" method="POST" class="logout-form" >
           <button class="logout-btn" type="submit">Logout</button>

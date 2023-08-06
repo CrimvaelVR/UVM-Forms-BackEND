@@ -21,9 +21,7 @@ router.get('/crear', (req, res) => {
       // Invocar la función del controlador con req y res
       controller.verCrearFormulario(req, res);
     }, 800);
-  });
-
-
+});
 
 
 router.get('/:id', (req, res) => {
@@ -38,10 +36,12 @@ router.post('/:id', (req, res) => {
     // Aplicar un tiempo de espera de 2 segundos
     setTimeout(() => {
       // Invocar la función del controlador con req y res
-      controller.crearRespuesta(req, res);
+      controller2.crearRespuesta(req, res);
     }, 800);
 });
 
-
+router.use((req ,res) => {
+    res.status(404).render('404', {mensaje: 'Página no encontrada'})
+})
 
 module.exports = router;

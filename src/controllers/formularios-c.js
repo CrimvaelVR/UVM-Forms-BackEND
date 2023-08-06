@@ -64,26 +64,26 @@ class formularioController {
                   .catch(error => {
                     // Si ocurre un error al guardar el formulario, enviar un mensaje de error
                     console.error(error);
-                    res.status(500).json({mensaje: 'Error al guardar el formulario', error});
+                    res.status(500).render('404', {mensaje: 'Error al guardar formulario'})
                   });
               })
               .catch(error => {
                 // Si ocurre un error al buscar los formularios, enviar un mensaje de error
                 console.error(error);
-                res.status(500).json({mensaje: 'Error al buscar los formularios', error});
+                res.status(500).render('404', {mensaje: 'Error al buscar formularios'})
               });
           } else {
             // Si no se encuentra al autor, enviar un mensaje de error
-            res.status(404).json({mensaje: 'Autor no encontrado'});
+            res.status(404).render('404', {mensaje: 'Autor no encontrado'})
           }
         })
         .catch(error => {
           // Si ocurre un error al buscar al autor, enviar un mensaje de error
           console.error(error);
-          res.status(500).json({mensaje: 'Error al buscar al autor', error});
+          res.status(500).render('404', {mensaje: 'Error al buscar autor'})
         });
     } catch (error) {
-      res.status(500).json({mensaje: 'Error al crear el formulario', error});
+      res.status(500).render('404', {mensaje: 'Error al crear formulario'})
     }
   };
   
@@ -101,7 +101,7 @@ class formularioController {
       res.status(200).render('formularios-crear', {user: user});
 
     } catch (error) {
-      res.status(500).json({mensaje: 'Error al obtener el usuario', error});
+      res.status(500).render('404', {mensaje: 'Error al obtener el usuario'})
     }
   };
 
@@ -156,14 +156,14 @@ class formularioController {
 
         const preguntas = formulario.preguntas
         if (!formulario) {
-          return res.status(404).json({mensaje: 'Formulario no encontrado'});
+          return     res.status(404).render('404', {mensaje: 'Formulario no encontrado'})
         }
-        res.status(200).render('respuestas-crear', {formulario: formulario, preguntas: preguntas});
+        res.status(200).render('respuestas-crear', {formulario: formulario, preguntas: preguntas, user:user});
 
       }
 
     } catch (error) {
-      res.status(500).json({mensaje: 'Error al obtener el usuario', error});
+      res.status(404).render('404', {mensaje: 'Error al obtener formulario'})
     }
   };
 
@@ -177,6 +177,9 @@ class formularioController {
       // Obtener el nombre de usuario del token
       const username = decoded.usuario;
       const user = username
+
+      const datosUsuario = await users.find({usuario: user})
+
 
       if (!RegExp.escape) {
         RegExp.escape = function(s) {
@@ -196,10 +199,10 @@ class formularioController {
         nombreAutor[f]= autores[f].nombre
       }
 
-      res.status(200).render('formularios-buscar', {resultadoBusqueda: resultadoBusqueda, titulo: titulo, user: user, autor: nombreAutor});
+      res.status(200).render('formularios-buscar', {resultadoBusqueda: resultadoBusqueda, titulo: titulo, user: user, autor: nombreAutor, autorLogin: datosUsuario[0].id});
 
     } catch (error) {
-      res.status(500).json({mensaje: 'Error al obtener el usuario', error});
+      res.status(500).render('404', {mensaje: 'Error al obtener usuario'})
     }
   };
 

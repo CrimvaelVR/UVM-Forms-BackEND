@@ -51,13 +51,12 @@ header {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 2ch; 
+  gap: 3ch; 
 }
 
   
 .header-right a {
     display: block;
-    padding: 10px 20px;
     color: #ffffff;
     text-decoration: none;
     transition: 0.2s;
@@ -113,7 +112,42 @@ header {
     background-color: #860000;
     color:white;
   }
+
+  .faltanDatos{
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    background-color: #ffa7b1;
+    border-radius: 20px;
+    padding: 5px;
+  }
   
+.formsButton{
+  border-radius: 5px;
+  width: 360px;
+  height: 70px;
+  font-size: 1.7rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.formsButton{
+  background-color: #1d555b;
+  color: #ffffff;
+  border: none;
+  transition: all 0.5s;
+
+}
+
+.logout-form{
+  margin: 0;
+  padding: 0;
+}
+.formsButton:hover{
+  background-color: #860000;
+}
+
+
   @media screen and (max-width: 600px) {
     
     /*Esconde el elemento header-right por default */
@@ -252,6 +286,7 @@ header {
   }
 
   .formBuscar {
+    transition: all 0.4s ease-in-out;
     display: flex;
     align-items: center;
     background-color: #f2f2f2;

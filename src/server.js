@@ -1,8 +1,6 @@
 const express = require('express');
 const path = require('path')
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
-
 
 ///INICIALIZACIONES
 const app = express();
@@ -24,8 +22,6 @@ app.set('scripts', path.join(__dirname, 'scripts'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(cors({ credentials: true }))
-
 
 // VARIABLES GLOBALES
 
@@ -36,7 +32,6 @@ const indexRuta = require('./routes/index');
 const busquedaRuta = require('./routes/busqueda');
 const contactoRuta = require('./routes/contacto');
 const landingRuta = require('./routes/landing');
-const errorRuta = require('./routes/error');
 
 
 app.use('/usuarios', usuariosRuta);
@@ -45,7 +40,6 @@ app.use('/index', indexRuta)
 app.use('/busqueda', busquedaRuta)
 app.use('/', landingRuta)
 app.use('/contacto', contactoRuta);
-app.use('/error', errorRuta)
 
 //ARCHIVOS ESTATICOS
 

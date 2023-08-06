@@ -16,26 +16,45 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header>
-        <div class="header">
-          <a href="#" class="logo"><img src="resources/uvm.png" alt="Logo">
-            <p>UVM Forms</p>
+  <header>
+    <div class="header">
+      <a href="/" class="logo"><img src="resources/uvm.png" alt="Logo">
+        <p>UVM Forms</p>
+      </a>
+      <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="header-right">
+
+        <% if(user){ %>
+        <div class="formBuscar" id="formBuscar">
+          <a id="buscar" style="padding: 0;">
+              <i class='bx bxs-search' id="searchIcon"></i>
           </a>
-          <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-    
-          <div class="header-right">
-            <a href="/" id="inicio" onclick="showLoader()">Inicio</a>
-            <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
-            <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
-          </div>
-          </div>
+          <input type="text" placeholder="Buscar" id="textoBuscar">
         </div>
-      </header>
+        <% } %>
+
+        <a href="/" onclick="showLoader()" id="inicio">Inicio</a>
+        <a href="/index" onclick="showLoader()" id="formularios">Mis formularios</a>
+        <a href="/contacto" onclick="showLoader()" id="contactos">Contacto</a>
+        <% if(user){ %>
+          <div style="display: flex; align-items: center;">
+            <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+          </div>
+          <form action="/index/disconnect" method="POST" class="logout-form">
+            <button class="logout-btn" type="submit">Logout</button>
+          </form>
+        <% } %>
+      </div>
+      </div>
+    </div>
+  </header>
+
 <script src="/scripts/header.js"></script>
 
     <main>
@@ -59,8 +78,13 @@
                     </ul>
                 </div>
                 <div class="buttons">
-                    <a href="/usuarios/crear"><button class="registerButton" onclick="showLoader()">Regístrate</button></a>
-                    <a href="/usuarios/login"><button class="loginButton" onclick="showLoader()">Inicia sesión</button></a>
+                  <% if(!user){ %>
+                    <a href="/usuarios/crear"><button class="registerButton">Regístrate</button></a>
+                    <a href="/usuarios/login"><button class="loginButton">Inicia sesión</button></a>
+                  <% } else { %>
+
+                    <a href="/index"><button class="formsButton">Tus formularios</button></a>
+                  <% } %>
                 </div>
             </div>
             <div class="image">
@@ -196,6 +220,7 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="/scripts/loader.js"></script>
+    <script src="/scripts/buscarform.js"></script>
 
 </body>
 </html>

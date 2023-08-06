@@ -17,7 +17,7 @@
 <body>
   <header>
     <div class="header">
-      <a href="#" class="logo"><img src="/resources/uvm.png" alt="Logo">
+      <a href="/" class="logo"><img src="/resources/uvm.png" alt="Logo">
         <p>UVM Forms</p>
       </a>
       <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
@@ -38,7 +38,9 @@
       <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
       <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
       
+      <div style="display: flex; align-items: center;">
         <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+      </div>
 
         <form action="/index/disconnect" method="POST" class="logout-form" >
           <button class="logout-btn" type="submit">Logout</button>
@@ -69,7 +71,11 @@
                         <p class="formDescription"><b>Autor: <%= autor[i] %></b></p>
                         <p class="formTitle"><%= resultadoBusqueda[i].titulo %></p>
                         <p class="formDescription"><%= resultadoBusqueda[i].descripcion %></p>
-                        <a href="/formularios/<%= resultadoBusqueda[i]._id %>" onclick="showLoader()" style="text-decoration: none; color: white; background-color: #88c426; padding: 10px; border-radius: 30px; margin-top: 20px;">Responder formulario</a>
+                        <% if (resultadoBusqueda[i].id_Autor == autorLogin) { %>
+                          <a href="/formularios/<%= resultadoBusqueda[i]._id %>" style="text-decoration: none; color: white; background-color: #860000; padding: 10px; border-radius: 30px; margin-top: 20px;">Ver respuestas</a>
+                          <% } else { %> 
+                            <a href="/formularios/<%= resultadoBusqueda[i]._id %>" style="text-decoration: none; color: white; background-color: #88c426; padding: 10px; border-radius: 30px; margin-top: 20px;">Responder formulario</a>
+                          <% } %>
                     </div>
                 <% } %>
 

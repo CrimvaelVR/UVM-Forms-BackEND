@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +19,7 @@
 <body>
   <header>
     <div class="header">
-      <a href="#" class="logo"><img src="/resources/uvm.png" alt="Logo">
+      <a href="/" class="logo"><img src="/resources/uvm.png" alt="Logo">
         <p>UVM Forms</p>
       </a>
       <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
@@ -65,69 +62,69 @@
 <main>
   <section class="formsR">
     <h1>Crear una respuesta</h1>
-<h2><%- formulario.titulo %></h2>
-<p><%- formulario.descripcion %></p>
-<form action="" method="POST">
-
-  <% if(preguntas == '') { %>
-
-    <h3>No tienes formularios registrados</h3>
-
-  <% } else { %>
-
-      <% for (i = 0; i < preguntas.length; i++) { %>
-
-        <% if(preguntas[i].tipo == 'text'){ %>
-
-          <div>
-            <label for="" ><%- preguntas[i].texto %></label>
-            <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
-            <input type="text" name="Texto_Respuesta<%- i+1 %>">
-          </div>
-
-        <% } %>
-
-        <% if(preguntas[i].tipo == 'options'){  %>
-          <% opciones = preguntas[i].opciones %>
-          <div>
-            <label for="" ><%- preguntas[i].texto %></label>
-            <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
-            
-            <% for(f=0;  f < opciones.length ; f++){ %>
-            <div class="option">
-              <input type="checkbox" name="Texto_Respuesta<%- i+1 %>" value="<%-opciones[f] %>">
-              <label>  <%- opciones[f] %> </label>
-            </div>
+    <h2><%- formulario.titulo %></h2>
+    <p><%- formulario.descripcion %></p>
+    <form action="" method="POST">
+    
+      <% if(preguntas == '') { %>
+    
+        <h3>No tienes formularios registrados</h3>
+    
+      <% } else { %>
+    
+          <% for (i = 0; i < preguntas.length; i++) { %>
+    
+            <% if(preguntas[i].tipo == 'text'){ %>
+    
+              <div>
+                <label for="" ><%- preguntas[i].texto %></label>
+                <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+                <input type="text" name="Texto_Respuesta<%- i+1 %>">
+              </div>
+    
             <% } %>
-          </div>
-
-        <% } %>
-
-        <% if(preguntas[i].tipo == 'select'){ %>
-
-          <% opciones = preguntas[i].opciones %>
-          <div>
-            <label for="" ><%- preguntas[i].texto %></label>
-            <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
-            
-            <% for(f=0;  f < opciones.length ; f++){ %>
-            <div class="option">
-              <input type="radio" name="Texto_Respuesta<%- i+1 %>" value="<%- opciones[f] %>">
-              <label>  <%- opciones[f] %> </label>
-            </div>
+    
+            <% if(preguntas[i].tipo == 'options'){  %>
+              <% opciones = preguntas[i].opciones %>
+              <div>
+                <label for="" ><%- preguntas[i].texto %></label>
+                <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+                
+                <% for(f=0;  f < opciones.length ; f++){ %>
+                <div class="option">
+                  <input type="checkbox" name="Texto_Respuesta<%- i+1 %>" value="<%-opciones[f] %>">
+                  <label>  <%- opciones[f] %> </label>
+                </div>
+                <% } %>
+              </div>
+    
             <% } %>
-          </div>
-
-        <% } %>
-
+    
+            <% if(preguntas[i].tipo == 'select'){ %>
+    
+              <% opciones = preguntas[i].opciones %>
+              <div>
+                <label for="" ><%- preguntas[i].texto %></label>
+                <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+                
+                <% for(f=0;  f < opciones.length ; f++){ %>
+                <div class="option">
+                  <input type="radio" name="Texto_Respuesta<%- i+1 %>" value="<%- opciones[f] %>">
+                  <label>  <%- opciones[f] %> </label>
+                </div>
+                <% } %>
+              </div>
+    
+            <% } %>
+    
+          <% } %>
+    
       <% } %>
-
-  <% } %>
-
-  
-
-  <button type="submit">Enviar respuesta</button>
-</form>
+    
+      
+    
+      <button type="submit">Enviar respuesta</button>
+    </form>
   </section>
 </main>
     

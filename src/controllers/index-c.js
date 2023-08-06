@@ -29,17 +29,17 @@ class indexController {
               .catch(error => {
                 // Si ocurre un error al buscar los formularios, enviar un mensaje de error
                 console.error(error);
-                res.status(500).json({mensaje: 'Error al buscar los formularios', error});
+                res.status(500).render('404', {mensaje: 'Error al buscar formularios'})
               });
           } else {
             // Si no se encuentra al usuario, enviar un mensaje de error
-            res.status(404).json({mensaje: 'Usuario no encontrado'});
+            res.status(404).render('404', {mensaje: 'Error al obtener usuario'})
           }
         })
         .catch(error => {
           // Si ocurre un error al buscar al usuario, enviar un mensaje de error
           console.error(error);
-          res.status(500).json({mensaje: 'Error al buscar al usuario', error});
+          res.status(500).render('404', {mensaje: 'Error al buscar usuario'})
         });
     } catch (error) {
       // Si ocurre un error al crear el formulario, enviar un mensaje de error
