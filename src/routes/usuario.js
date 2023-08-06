@@ -20,26 +20,13 @@ function(req, res, next){
 }, 
 controller.obtenerUsuarioPorId);
 
-// Ruta para actualizar un usuario por su id (PUT)
-router.put('/id/:id', 
-function(req, res, next){
-  var roles = ["admin"];
-  checkRole(req, res, next, roles)
-}, 
-controller.actualizarUsuarioPorId);
-
-// Ruta para eliminar un usuario por su id (DELETE)
-router.delete('/id/:id', 
-function(req, res, next){
-  var roles = ["admin"];
-  checkRole(req, res, next, roles)
-}, controller.eliminarUsuarioPorId);
 
 // Ruta para crear un usuario (POST)
 router.post('/crear', controller.crearUsuario);
 
 // Ruta para iniciar sesión (POST)
 router.post('/login', controller.iniciarSesion);
+
 router.get('/login', verificarSesion, (req, res) => {
   // Si el usuario está autenticado, redirigir al usuario a la página de inicio
   if (req.user) {
@@ -52,9 +39,7 @@ router.get('/login', verificarSesion, (req, res) => {
 
 // Ruta para mostrar el formulario de crear usuario (GET)
 
-router.get('/crear',
-
-(req, res) => {
+router.get('/crear', (req, res) => {
   // Renderizar el archivo EJS
   res.render('register.ejs');
 });

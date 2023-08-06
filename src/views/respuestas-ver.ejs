@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
-    <link rel="shortcut icon" href="resources/uvmicon.png">
+    <link rel="shortcut icon" href="resources/uvm.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/header.css">
@@ -38,7 +38,9 @@
       <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
       <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
       
+      <div style="display: flex; align-items: center;">
         <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+      </div>
 
         <form action="/index/disconnect" method="POST" class="logout-form" >
           <button class="logout-btn" type="submit">Logout</button>

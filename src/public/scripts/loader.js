@@ -2,7 +2,6 @@
 //Loader
 window.onload = function(){
     var contenedor = document.getElementById("contenedor_carga");
-  
     contenedor.style.visibility = "hidden";
     contenedor.style.opacity = "0";
   }
@@ -19,3 +18,10 @@ window.onload = function(){
     contenedor.style.opacity = "0";
   }
   
+  window.addEventListener('pageshow', function(event) {
+    var contenedor = document.getElementById("contenedor_carga");
+    if (event.persisted) {
+      contenedor.style.visibility = "hidden";
+      contenedor.style.opacity = "0";
+    }
+  });

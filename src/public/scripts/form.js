@@ -60,16 +60,6 @@ function addQuestion() {
   }
 }
 
-
-function AddTitulo(){
-  const titulo = document.getElementById("titulo").value;
-  const descripcion = document.getElementById("descripcion").value;
-
-  
-}
-
-
-
 function submitForm() {
   // Aquí puedes implementar la lógica para enviar el formulario
   alert("Formulario enviado!");

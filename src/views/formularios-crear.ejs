@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UVM Forms</title>
-  <link rel="shortcut icon" href="media/uvmicon.png">
+  <link rel="shortcut icon" href="media/uvm.png">
   <link rel="stylesheet" href="/styles/createform.css">
   <link rel="stylesheet" href="/styles/header.css">
   <link rel="stylesheet" href="/styles/footer.css">
@@ -68,13 +68,13 @@
         <label for="">Título del formulario:</label>
         <input type="text" name="titulo" id="titulo" required>
         <label for="">Descripción del formulario:</label>
-        <textarea type="text" name="descripcion" id="descripcion"> </textarea>
+        <textarea type="text" name="descripcion" id="descripcion" required></textarea>
 
         <div class="createQuestion" id="questionsContainer">
 
           <div class="question">
             <label>Pregunta</label> 
-            <input type="text" class="question-text" name="textoPregunta1" placeholder="Escribe tu pregunta aquí">
+            <input type="text" class="question-text" name="textoPregunta1" placeholder="Escribe tu pregunta aquí" required>
           
             <label>Tipo de Pregunta</label>
             <select id="questionType" name="tipoPregunta1">
