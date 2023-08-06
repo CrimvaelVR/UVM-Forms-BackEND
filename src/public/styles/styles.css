@@ -12,76 +12,42 @@ body {
     background-color: #f2f2f2;
 }
 
-.LogoUVMForms {
-    width: 90px;
-}
-
-header {
-    background-color: #1d555b;
-    border-bottom: 1px solid #ccc;
-    padding: 0;
-}
-
-.header {
-    display: flex;
-    position: relative;
-    align-items: center;
-    z-index: 999; 
-    justify-content: space-between;
-    padding: 15px 40px 15px 40px;
-    position: sticky;
-    top: 0;
-}
-  
-.logo {
-    display: flex;
-    text-decoration: none;   
-    gap: 15px; 
-    align-items: center;
-
-}
-
-.logo p {
-    color: white;
-    font-weight: 900;
+/*Loader*/
+#contenedor_carga {
+    background-color: rgba(250, 240, 245, 0.9);
+    height: 100%;
     width: 100%;
-    font-size: 25px ;
-}
+    position: fixed;
+    -webkit-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+  }
   
-.logo img { 
-    width: 70px;
-    height: 70px;
-}
+  #carga{
+    border: 15px solid #ccc;
+    border-top-color: #22254b;
+    border-top-style: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin-top: 0;
   
-.header-right {
-    display: flex;
-    align-items: center;
-}
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: girar 1s linear infinite;
+    -o-animation: girar 1s linear infinite;
+    animation: girar 1s linear infinite;
+  }
   
-.header-right a {
-    display: block;
-    padding: 10px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    transition: 0.2s;
- 
-}
-
-.header-right p {
-    display: block;
-    color: #88c426;
-    transition: 0.2s;
-    padding-left: 5px;
-
-}
+  @keyframes girar {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+  }
   
-.header-right a:hover {
-    transform: scale(1.1);
-    color: #88c426
-  
-}
-
-#profileIcon{
-    font-size: 25px;
-    color: #88c426;
-}

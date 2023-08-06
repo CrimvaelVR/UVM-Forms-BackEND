@@ -74,7 +74,7 @@ class UsuarioController {
   async iniciarSesion(req, res) {
     try {
 
-      // Verificar si se proporcionaron las credenciales
+
       if (!req.body.usuario || !req.body.contrasena) {
         return res.status(400).json({ mensaje: 'Se requiere el usuario y la contraseña para iniciar sesión.' });
       }

@@ -10,6 +10,10 @@ main {
 
 */
 
+main{
+    margin-top: 10ch;
+}
+
 .buttons {
     display: flex;
     align-items: center;
@@ -50,6 +54,7 @@ main {
     border-radius: 5px;
     height: 100%;
     width: 100%;
+    margin-bottom: 23vh;
 }
 
 .cardForm {
@@ -144,15 +149,21 @@ main {
     color: white;
 }
 
-.formBuscar{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
 
-.formBuscar input{
-    border-radius: 20px;
-    text-indent: 10px;
-    height: 30px;
-    padding: 10px;
+
+@media screen and (max-width: 768px) {
+    .createForm {
+      width: 90%;
+    }
+    
+    .cardForm,
+    .cardFormNuevo,
+    .cardFormResp {
+      width: 100%;
+    }
+    
+    .forms {
+      margin-bottom: 10vh;
+    }
 }
+  

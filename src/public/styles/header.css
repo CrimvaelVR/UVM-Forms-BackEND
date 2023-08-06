@@ -44,11 +44,16 @@ header {
     width: 70px;
     height: 70px;
 }
-  
+
+
+
+
 .header-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 2ch; /* Add gap between elements */
 }
+
   
 .header-right a {
     display: block;
@@ -126,13 +131,17 @@ header {
       display: none;
       flex-direction: column;
       position: fixed;
-      top: 10%;
+      top: 9%;
       right: 0;
       width: 100%;
       height: auto;
       background-color: #88c426;   
       height: 100vh; /* Hacer que el elemento de header-right cubra verticalmente toda la pantalla */
       box-shadow: -2px -2px 5px rgba(0,0,0,0.1);
+    }
+
+    .formBuscar{
+      margin-top: 2ch;
     }
     
     /* Mostrar el elemento header-right cuando la hamburguesa está activa */
@@ -156,7 +165,7 @@ header {
       display:block;        
       width:100%;        
       height:4px;        
-      background-color:#333;        
+      background-color: #bcd4de;        
       margin-bottom:4px;        
       border-radius:2px;        
       transition:border-radius 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;        
@@ -234,9 +243,63 @@ header {
     
    /* Cambia el tamaño del logo entre esos rangos de resoluciones */
    .logo {         
-     width:10vh;
-     height:10vh;       
+     width:9vh;
+     height:9vh;   
+  
   
    }
    
   }
+
+  .formBuscar {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 5px;
+  }
+  
+  #buscar {
+    padding: 5px;
+    margin-right: 5px;
+    background-color: #e8e8e8;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #searchIcon {
+    color: #888888;
+    font-size: 20px;
+  }
+  
+  #textoBuscar {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  #textoBuscar::placeholder {
+    color: #888888;
+  }
+
+  .logout-btn {
+  padding: 10px 20px;
+  background-color: #F44336;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #D32F2F;
+}
+
+.logout-btn:active {
+  background-color: #B71C1C;
+}
+  
