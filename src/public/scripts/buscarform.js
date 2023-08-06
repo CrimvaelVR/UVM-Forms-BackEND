@@ -1,5 +1,4 @@
 
-
 const buscar = document.getElementById('buscar');
 const textoBuscar = document.getElementById('textoBuscar');
 
