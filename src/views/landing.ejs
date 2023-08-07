@@ -56,6 +56,12 @@
   </header>
 
 <script src="/scripts/header.js"></script>
+<script>
+  var logoutBtn = document.querySelector(".logout-btn");
+  logoutBtn.addEventListener("click", function() {  showLoader();  });
+</script>
+
+
 
     <main>
 
@@ -79,11 +85,11 @@
                 </div>
                 <div class="buttons">
                   <% if(!user){ %>
-                    <a href="/usuarios/crear"><button class="registerButton">Regístrate</button></a>
-                    <a href="/usuarios/login"><button class="loginButton">Inicia sesión</button></a>
+                    <a href="/usuarios/crear"><button class="registerButton" onclick="showLoader()">Regístrate</button></a>
+                    <a href="/usuarios/login"><button class="loginButton" onclick="showLoader()">Inicia sesión</button></a>
                   <% } else { %>
 
-                    <a href="/index"><button class="formsButton">Tus formularios</button></a>
+                    <a href="/index"><button class="formsButton" onclick="showLoader()">Tus formularios</button></a>
                   <% } %>
                 </div>
             </div>

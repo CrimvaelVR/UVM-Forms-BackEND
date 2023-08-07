@@ -20,29 +20,60 @@ function(req, res, next){
 }, 
 controller.obtenerUsuarioPorId);
 
+// Ruta para actualizar un usuario por su id (PUT)
+router.put('/id/:id', 
+function(req, res, next){
+  var roles = ["admin"];
+  checkRole(req, res, next, roles)
+}, 
+controller.actualizarUsuarioPorId);
 
-// Ruta para crear un usuario (POST)
-router.post('/crear', controller.crearUsuario);
+// Ruta para eliminar un usuario por su id (DELETE)
+router.delete('/id/:id', 
+function(req, res, next){
+  var roles = ["admin"];
+  checkRole(req, res, next, roles)
+}, controller.eliminarUsuarioPorId);
 
-// Ruta para iniciar sesión (POST)
-router.post('/login', controller.iniciarSesion);
 
-router.get('/login', verificarSesion, (req, res) => {
-  // Si el usuario está autenticado, redirigir al usuario a la página de inicio
-  if (req.user) {
-    res.redirect('/index');
-  } else {
-    // Si el usuario no está autenticado, mostrar la página de inicio de sesión
-    res.render('login.ejs');
-  }
-});
-
-// Ruta para mostrar el formulario de crear usuario (GET)
+// Ruta para mostrar el formulario de registro de usuarios
 
 router.get('/crear', (req, res) => {
-  // Renderizar el archivo EJS
-  res.render('register.ejs');
+  setTimeout(() => {
+    res.render('register.ejs')
+  }, 800);
 });
+
+// Ruta para crear un usuario (POST)
+router.post('/crear', (req, res) => {
+  setTimeout(() => {
+    controller.crearUsuario(req, res);
+  }, 800);
+});
+
+
+
+// Ruta para iniciar sesión (POST)
+router.post('/login', (req, res) => {
+  setTimeout(() => {
+    controller.iniciarSesion(req, res);
+  }, 800);
+});
+
+
+
+router.get('/login', verificarSesion, (req, res) => {
+  setTimeout(() => {
+    // Si el usuario está autenticado, redirigir al usuario a la página de inicio
+    if (req.user) {
+      res.redirect('/index');
+    } else {
+      // Si el usuario no está autenticado, mostrar la página de inicio de sesión
+      res.render('login.ejs');
+    }
+  }, 800);
+});
+
 
 router.use((req ,res) => {
   res.status(404).render('404', {mensaje: 'Página no encontrada'})

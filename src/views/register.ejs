@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVM Forms</title>
     <link rel="shortcut icon" href="media/uvmicon.png">
-    <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/register.css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -17,7 +19,7 @@
 <body>
   <header>
     <div class="header">
-      <a href="/" class="logo"><img src="/resources/uvm.png" alt="Logo">
+      <a href="#" class="logo"><img src="/resources/uvm.png" alt="Logo">
         <p>UVM Forms</p>
       </a>
       <!-- Los divs para crear la clase hamburguesa, como pseudoelementos -->
@@ -37,100 +39,111 @@
   </header>
 
   <script src="/scripts/header.js"></script>
+  <script>
+    var logoutBtn = document.querySelector(".logout-btn");
+    logoutBtn.addEventListener("click", function() {  showLoader();  });
+  </script>
 
-    <main>
-        <div class="form">
-            <form method="post" id="registerForm" action="/usuarios/crear" >
-                <h2>Registro</h2>
-                <div class="content">
-                    <div class="inputbox">
-                        <span class="details">Nombre Completo</span>
-                        <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
-                      </div>
-                      <div class="inputbox">
-                        <span class="details">Cédula</span>
-                        <input type="number" name="cedula" placeholder="Ingrese su cédula" required>
-                      </div>
-                      <div class="inputbox">
-                        <span class="details">Correo Electrónico</span>
-                        <input type="email" name="correo" placeholder="Ingrese su correo electrónico" required>
-                      </div>
-                      <div class="inputbox">
-                        <span class="details">Nombre de Usuario</span>
-                        <input type="text" name="usuario" placeholder="Ingrese su nombre de usuario" required>
-                      </div>
-                      <div class="inputbox">
-                        <span class="details">Contraseña</span>
-                        <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña" required>
-                      </div>
-                      <div class="inputbox">
-                        <span class="details">Confirme su contraseña</span>
-                        <input type="password" name="confirmar_contrasena" id="confirmPassword" placeholder="Ingrese su contraseña" required>
-                    </div>
-                      <div>
-                        <input type="hidden" name="rol" value="usuario">
-                <div class="button">
-                    <input type="submit" class="submitButton">
-                </div>
-                    
-                    <a class="backButton" href="/">Regresar</a>
-            </form>
-    </main>
 
-    <footer class="footer">
-        <!-- Primer nivel: logo de la compañía -->
-        <img src="/resources/uvm.png" alt="Logo de la compañía" class="footer-logo">
-        <!-- Segundo nivel: navegación -->
-        <nav class="footer-nav">
-          <!-- Primera columna: inicio, sobre nosotros, contacto -->
-          <div class="footer-nav-column">
-            <a href="#" class="footer-nav-link">Inicio</a>
-            <a href="https://uvm.edu.ve/identidad-uvm/" class="footer-nav-link">Sobre nosotros</a>
-            <a href="https://uvm.edu.ve/normativa-uvm/" class="footer-nav-link">Historia</a>
+  <main class="main-form">
+    <section class="form-section">
+      <div class="form">
+        <form method="post" id="registerForm" action="/usuarios/crear" >
+          <h2 class="form-title">Registro</h2>
+          <div class="content">
+            <div class="inputbox">
+              <span class="details">Nombre Completo</span>
+              <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="inputbox">
+              <span class="details">Cédula</span>
+              <input type="number" name="cedula" placeholder="Ingrese su cédula" required>
+            </div>
+            <div class="inputbox">
+              <span class="details">Correo Electrónico</span>
+              <input type="email" name="correo" placeholder="Ingrese su correo electrónico" required>
+            </div>
+            <div class="inputbox">
+              <span class="details">Nombre de Usuario</span>
+              <input type="text" name="usuario" placeholder="Ingrese su nombre de usuario" required>
+            </div>
+            <div class="inputbox">
+              <span class="details">Contraseña</span>
+              <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña" required>
+            </div>
+            <div class="inputbox">
+              <span class="details">Confirme su contraseña</span>
+              <input type="password" name="confirmar_contrasena" id="confirmPassword" placeholder="Ingrese su contraseña" required>
+            </div>
+            <div class="hidden-input">
+              <input type="hidden" name="rol" value="usuario">
+            </div>
+            <div class="button">
+              <input type="submit" class="submitButton">
           </div>
-          <!-- Segunda columna: -->
-          <div class="footer-nav-column">
-            <a href="https://uvm.edu.ve/estructura-universitaria/" class="footer-nav-link">Estructura Universitaria</a>
-            <a href="https://uvm.edu.ve/normativa-uvm/" class="footer-nav-link">Normativa</a>
-            <a href="https://uvm.edu.ve/investigacion-y-extension/" class="footer-nav-link">Investigación y Extensión</a>
-          </div>
-        <!-- Tercer nivel: redes sociales -->
-        <div class="footer-social">
-          <!-- Icono de Facebook -->
-          <a href="https://www.facebook.com/univalledelmomboy/?locale=es_LA" class="footer-social-icon">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <!-- Icono de Twitter -->
-          <a href="https://twitter.com/univallemomboy?lang=es" class="footer-social-icon">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <!-- Icono de Instagram -->
-          <a href="https://www.instagram.com/univalledelmomboy/" class="footer-social-icon">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <!-- Icono de YouTube -->
-          <a href="https://www.youtube.com/channel/UCyPGGFu2WNlBP1BMvholYWA" class="footer-social-icon">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-        </div>
-        <!-- Cuarto nivel: detalles legales -->
-        <div class="footer-legal">
-          <!-- Primera columna: derechos reservados -->
-          <div class="footer-legal-column">
-            <p class="footer-legal-text">&copy; 2023 Universidad "Valle del Momboy"</p>
-          </div>
-          <!-- Segunda columna: términos y condiciones -->
-          <div class="footer-legal-column">
-            <p class="footer-legal-text"><a href="https://revistav.uvm.edu.ve/articulos/cs07s7Articulo1vol13num12019.pdf">Términos y condiciones</a></p>
-          </div>
-          <!-- Tercera columna: política de privacidad -->
-          <div class="footer-legal-column">
-            <p class="footer-legal-text"><a href="https://repositorio.uvm.edu.ve/items/b8397abb-5c25-4557-994b-a1a6fbd3d4ce">Reglamento</a></p>
-          </div>
-        </div>
-      </footer>
+              
+              <a class="backButton" href="/" onclick="showLoader()">Regresar</a>
+        </form>
+      </div>
+    </section>        
+  </main>
+  
+
+  <footer class="footer">
+    <!-- Primer nivel: logo de la compañía -->
+    <img src="/resources/uvm.png" alt="Logo de la compañía" class="footer-logo">
+    <!-- Segundo nivel: navegación -->
+    <nav class="footer-nav">
+      <!-- Primera columna: inicio, sobre nosotros, contacto -->
+      <div class="footer-nav-column">
+        <a href="#" class="footer-nav-link">Inicio</a>
+        <a href="https://uvm.edu.ve/identidad-uvm/" class="footer-nav-link">Sobre nosotros</a>
+        <a href="https://uvm.edu.ve/normativa-uvm/" class="footer-nav-link">Historia</a>
+      </div>
+      <!-- Segunda columna: -->
+      <div class="footer-nav-column">
+        <a href="https://uvm.edu.ve/estructura-universitaria/" class="footer-nav-link">Estructura Universitaria</a>
+        <a href="https://uvm.edu.ve/normativa-uvm/" class="footer-nav-link">Normativa</a>
+        <a href="https://uvm.edu.ve/investigacion-y-extension/" class="footer-nav-link">Investigación y Extensión</a>
+      </div>
+    <!-- Tercer nivel: redes sociales -->
+    <div class="footer-social">
+      <!-- Icono de Facebook -->
+      <a href="https://www.facebook.com/univalledelmomboy/?locale=es_LA" class="footer-social-icon">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <!-- Icono de Twitter -->
+      <a href="https://twitter.com/univallemomboy?lang=es" class="footer-social-icon">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+      <!-- Icono de Instagram -->
+      <a href="https://www.instagram.com/univalledelmomboy/" class="footer-social-icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <!-- Icono de YouTube -->
+      <a href="https://www.youtube.com/channel/UCyPGGFu2WNlBP1BMvholYWA" class="footer-social-icon">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <!-- Cuarto nivel: detalles legales -->
+    <div class="footer-legal">
+      <!-- Primera columna: derechos reservados -->
+      <div class="footer-legal-column">
+        <p class="footer-legal-text">&copy; 2023 Universidad "Valle del Momboy"</p>
+      </div>
+      <!-- Segunda columna: términos y condiciones -->
+      <div class="footer-legal-column">
+        <p class="footer-legal-text"><a href="https://revistav.uvm.edu.ve/articulos/cs07s7Articulo1vol13num12019.pdf">Términos y condiciones</a></p>
+      </div>
+      <!-- Tercera columna: política de privacidad -->
+      <div class="footer-legal-column">
+        <p class="footer-legal-text"><a href="https://repositorio.uvm.edu.ve/items/b8397abb-5c25-4557-994b-a1a6fbd3d4ce">Reglamento</a></p>
+      </div>
+    </div>
+  </footer>
+
+
     <script>
-
       document.getElementById("registerForm").addEventListener("submit", function(event) {
         var password = document.getElementById("contrasena").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
@@ -147,15 +160,15 @@
         }
       });
     </script>
-
-    <script src="/scripts/loader.js"></script>
+    
     <div id="contenedor_carga">
       <div id="carga"></div>
     </div>
-  
+    <script src="/scripts/loader.js"></script>
+
   
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>.
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

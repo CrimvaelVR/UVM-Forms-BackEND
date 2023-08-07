@@ -59,7 +59,41 @@ class formularioController {
                 nuevoformulario.save()
                   .then(formulario => {
                     // Enviar una respuesta con el mensaje y el formulario creados
-                    res.status(201).json({mensaje: 'Formulario creado correctamente', usuario: formulario});
+                    res.send(
+                      `<html>
+                        <head>
+                          <style>
+                          * {
+                          background-color: #1d555b;
+                        }
+                            /* Estilo de la alerta */
+                            .alert {
+                              position: fixed; /* Posición fija */
+                              top: 50%; /* A la mitad de la altura */
+                              left: 50%; /* A la mitad del ancho */
+                              transform: translate(-50%, -50%); /* Centrar el elemento */
+                              padding: 20px; /* Espacio interno */
+                              font-size: 24px; /* Tamaño de la fuente */
+                              background-color: #88c426; /* Color de fondo verde */
+                              color: white; /* Color del texto blanco */
+                            }
+                            *{
+                              background-color: #1d555b;
+                              background: #1d555b;
+                            }
+                          </style>
+                        </head>
+                        <body>
+                          <div class="alert" > Formulario creado correctamente</div>
+                          <script>
+                            // Redirigir al login después de 3 segundos
+                            setTimeout(() => {
+                              window.location.href = '/index'; // La URL a la que quieres redirigir
+                            }, 3000);
+                          </script>
+                        </body>
+                      </html>`
+                    );
                   })
                   .catch(error => {
                     // Si ocurre un error al guardar el formulario, enviar un mensaje de error

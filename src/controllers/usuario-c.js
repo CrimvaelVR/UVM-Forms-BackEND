@@ -13,12 +13,11 @@ class UsuarioController {
         // En lugar de enviar un JSON, enviamos un script
         res.send(
           `<html>
-          <link rel="stylesheet" href="/styles/styles.css">
             <head>
               <style>
-              *{
-                background-color: #1d555b;
-              }
+              * {
+              background-color: #1d555b;
+            }
                 /* Estilo de la alerta */
                 .alert {
                   position: fixed; /* Posición fija */
@@ -30,10 +29,14 @@ class UsuarioController {
                   background-color: #88c426; /* Color de fondo verde */
                   color: white; /* Color del texto blanco */
                 }
+                *{
+                  background-color: #1d555b;
+                  background: #1d555b;
+                }
               </style>
             </head>
             <body>
-              <div class="alert">
+              <div class="alert" > Usuario creado correctamente</div>
               <script>
                 // Redirigir al login después de 3 segundos
                 setTimeout(() => {

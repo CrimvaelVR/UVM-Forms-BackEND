@@ -38,6 +38,11 @@
       </header>
 <script src="/scripts/header.js"></script>
 
+<script>
+  var logoutBtn = document.querySelector(".logout-btn");
+  logoutBtn.addEventListener("click", function() {  showLoader();  });
+</script>
+
 
 
 
@@ -62,7 +67,7 @@
 
     <footer class="footer">
         <!-- Primer nivel: logo de la compañía -->
-        <img src="resources/uvm.png" alt="Logo de la compañía" class="footer-logo">
+        <img src="/resources/uvm.png" alt="Logo de la compañía" class="footer-logo">
         <!-- Segundo nivel: navegación -->
         <nav class="footer-nav">
           <!-- Primera columna: inicio, sobre nosotros, contacto -->
