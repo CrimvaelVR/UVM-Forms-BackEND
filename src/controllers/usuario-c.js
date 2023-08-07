@@ -49,60 +49,7 @@ class UsuarioController {
       });
     } catch (error) {
       console.log(error);
-      res.status(500).json({ mensaje: 'Error al crear el usuario', error });
-    }
-  }
-
-  async obtenerUsuarios(req, res) {
-    try {
-      const usuarios = await user.find();
-      res.status(200).json({ mensaje: 'Usuarios obtenidos correctamente', usuarios });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ mensaje: 'Error al obtener los usuarios', error });
-    }
-  }
-
-  async obtenerUsuarioPorId(req, res) {
-    try {
-      const id = req.params.id;
-      const usuario = await user.findById(id);
-      if (!usuario) {
-        return res.status(404).json({ mensaje: 'Usuario no encontrado' });
-      }
-      res.status(200).json({ mensaje: 'Usuario obtenido correctamente', usuario });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ mensaje: 'Error al obtener el usuario', error });
-    }
-  }
-
-  async actualizarUsuarioPorId(req, res) {
-    try {
-      const id = req.params.id;
-      const { nombre, cedula, correo, usuario, contrasena, rol } = req.body;
-      const usuarioActualizado = await user.findByIdAndUpdate(id, { nombre, cedula, correo, usuario, contrasena, rol }, { new: true });
-      if (!usuarioActualizado) {
-        return res.status(404).json({ mensaje: 'Usuario no encontrado' });
-      }
-      res.status(200).json({ mensaje: 'Usuario actualizado correctamente', usuario: usuarioActualizado });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ mensaje: 'Error al actualizar el usuario', error });
-    }
-  }
-
-  async eliminarUsuarioPorId(req, res) {
-    try {
-      const id = req.params.id;
-      const usuarioEliminado = await user.findByIdAndDelete(id);
-      if (!usuarioEliminado) {
-        return res.status(404).json({ mensaje: 'Usuario no encontrado' });
-      }
-      res.status(200).json({ mensaje: 'Usuario eliminado correctamente', usuario: usuarioEliminado });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ mensaje: 'Error al eliminar el usuario', error });
+      res.status(500).render('404', {mensaje: 'Error al crear usuario'})
     }
   }
 
@@ -111,7 +58,8 @@ class UsuarioController {
 
 
       if (!req.body.usuario || !req.body.contrasena) {
-        return res.status(400).json({ mensaje: 'Se requiere el usuario y la contraseña para iniciar sesión.' });
+        return res.status(400).render('404', {mensaje: 'Se requiere el usuario y la contraseña para iniciar sesión.'})
+
       }
   
       const { usuario, contrasena } = req.body;
@@ -119,7 +67,7 @@ class UsuarioController {
       const usuarioEncontrado = await user.findOne({ usuario });
       // Verificar si el usuario existe
       if (!usuarioEncontrado) {
-        return res.status(401).json({ mensaje: 'Credenciales inválidas' });
+        return res.status(401).render('404', {mensaje: 'Credenciales inválidas'})
       }
 
       // Verificar la contraseña
@@ -127,7 +75,7 @@ class UsuarioController {
 
       // Si la contraseña es inválida, enviar una respuesta de error
       if (!contrasenaValida) {
-        return res.status(401).json({ mensaje: 'Credenciales inválidas' });
+        return res.status(401).render('404', {mensaje: 'Credenciales inválidas'})
       }
 
       // Generar un token JWT
@@ -141,7 +89,7 @@ class UsuarioController {
 
     } catch (error) {
       console.log(error);
-      res.status(500).json({ mensaje: 'Error al iniciar sesión', error });
+      res.status(500).render('404', {mensaje: 'Error al iniciar sesión'})
     }
   }
 
@@ -153,7 +101,7 @@ cerrarSesion = async (req, res) => {
     res.redirect('/');
   } catch (error) {
     console.log(error);
-    res.status(500).json({ mensaje: 'Error al cerrar sesión', error });
+    res.status(500).render('404', {mensaje: 'Error al cerrar sesión'})
   }  
 };
   

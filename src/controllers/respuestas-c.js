@@ -32,7 +32,38 @@ class RespuestasController {
 
           const nuevaRespuesta = new answers({id_encuesta, id_User, respuestas});
           await nuevaRespuesta.save();
-          res.status(201).json({mensaje: 'Respuesta agreagada correctamente', respuesta: nuevaRespuesta});
+          res.status(201).send(
+            `<html>
+              <head>
+                <style>
+                * {
+                background-color: #1d555b;
+              }
+                  /* Estilo de la alerta */
+                  .alert {
+                    position: fixed; /* Posición fija */
+                    top: 50%; /* A la mitad de la altura */
+                    left: 50%; /* A la mitad del ancho */
+                    transform: translate(-50%, -50%); /* Centrar el elemento */
+                    padding: 20px; /* Espacio interno */
+                    font-size: 24px; /* Tamaño de la fuente */
+                    background-color: #88c426; /* Color de fondo verde */
+                    border-radius: 30px
+                    color: white; /* Color del texto blanco */
+                  }
+                </style>
+              </head>
+              <body>
+                <div class="alert"> Respuesta enviada correctamente</div>
+                <script>
+                  // Redirigir al login después de 3 segundos
+                  setTimeout(() => {
+                    window.location.href = '/'; // La URL a la que quieres redirigir
+                  }, 3000);
+                </script>
+              </body>
+            </html>`
+          );
         } catch (error) {
           res.status(500).render('404', {mensaje: 'Error al registrar respuesta'})
         }

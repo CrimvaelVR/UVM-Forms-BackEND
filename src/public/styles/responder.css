@@ -38,16 +38,16 @@
 .formsR input[type="text"],
 .formsR input[type="radio"],
 .formsR input[type="checkbox"] {
-  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 
-.formsR .option {
-  margin-bottom: 5px;
+.formsR input[type="text"]{
+  width: 100%;
 }
+
 
 .formsR button[type="submit"] {
   background-color: #4CAF50;
@@ -56,8 +56,28 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .formsR button[type="submit"]:hover {
   background-color: #45a049;
+
+}
+
+.option{
+  display: flex;
+  gap: 5px;
+}
+
+
+
+.options{
+  width: 100%;
+}
+
+.question{
+  margin-top: 20px;
+  background-color: #13373b;
+  padding: 20px;
+  border-radius: 30px;
 }

@@ -40,7 +40,9 @@
       <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
       <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
       
-      <i class='bx bx-user-circle' id="profileIcon"></i> <p id="profileName"> <%- user %></p>
+      <div style="display: flex; align-items: center;">
+        <i class='bx bx-user-circle' id="profileIcon"></i> <p id="profileName"> <%- user %></p>
+      </div>
 
         <form action="/index/disconnect" method="POST" class="logout-form" >
           <button class="logout-btn" type="submit">Logout</button>
@@ -76,7 +78,7 @@
     
             <% if(preguntas[i].tipo == 'text'){ %>
     
-              <div>
+              <div class="question">
                 <label for="" ><%- preguntas[i].texto %></label>
                 <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
                 <input type="text" name="Texto_Respuesta<%- i+1 %>">
@@ -86,16 +88,18 @@
     
             <% if(preguntas[i].tipo == 'options'){  %>
               <% opciones = preguntas[i].opciones %>
-              <div>
+              <div class="question">
                 <label for="" ><%- preguntas[i].texto %></label>
-                <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
-                
-                <% for(f=0;  f < opciones.length ; f++){ %>
-                <div class="option">
-                  <input type="checkbox" name="Texto_Respuesta<%- i+1 %>" value="<%-opciones[f] %>">
-                  <label>  <%- opciones[f] %> </label>
+                <div class="options">
+                  <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+                  <% for(f=0;  f < opciones.length ; f++){ %>
+                  <div class="option">
+                    <input type="checkbox" name="Texto_Respuesta<%- i+1 %>" value="<%-opciones[f] %>">
+                    <label>  <%- opciones[f] %> </label>
+                  </div>
+                  <% } %>
                 </div>
-                <% } %>
+
               </div>
     
             <% } %>
@@ -103,16 +107,21 @@
             <% if(preguntas[i].tipo == 'select'){ %>
     
               <% opciones = preguntas[i].opciones %>
-              <div>
+              <div class="question">
                 <label for="" ><%- preguntas[i].texto %></label>
-                <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
+
+                <div class="options">
+                  <input style="display: none;" type="text" name="id" value="<%- preguntas[i].id %>">
                 
-                <% for(f=0;  f < opciones.length ; f++){ %>
-                <div class="option">
-                  <input type="radio" name="Texto_Respuesta<%- i+1 %>" value="<%- opciones[f] %>">
-                  <label>  <%- opciones[f] %> </label>
+                  <% for(f=0;  f < opciones.length ; f++){ %>
+                  <div class="option">
+                    <input type="radio" name="Texto_Respuesta<%- i+1 %>" value="<%- opciones[f] %>">
+                    <label>  <%- opciones[f] %> </label>
+                  </div>
+                  <% } %>
+
                 </div>
-                <% } %>
+                
               </div>
     
             <% } %>

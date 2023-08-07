@@ -3,8 +3,6 @@ body{
     background-color: #809e3e
 }
 
-
-
 .createForm{
     margin: 20px auto;
     width: 50%;
@@ -16,11 +14,32 @@ body{
     margin-bottom: 12ch;
 }
 
+.enviarButton{
+
+  background-color: #860000;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.addOption{
+  background-color: #88c426;
+  color: black;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+
+}
 .createForm h1 {
     text-align: center;
     border-bottom: 2px solid black;
     padding-bottom: 15px;
     margin-bottom: 10px;
+}
+
+.option{
+  display: flex;
+  gap: 5px;
 }
 
 .createQuestion {

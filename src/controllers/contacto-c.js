@@ -25,12 +25,13 @@ class formularioController {
                 padding: 20px; /* Espacio interno */
                 font-size: 24px; /* Tamaño de la fuente */
                 background-color: #88c426; /* Color de fondo verde */
+                border-radius: 30px
                 color: white; /* Color del texto blanco */
               }
             </style>
           </head>
           <body>
-            <div class="alert" > Formulario enviado correctamente</div>
+            <div class="alert"> Formulario enviado correctamente</div>
             <script>
               // Redirigir al login después de 3 segundos
               setTimeout(() => {
