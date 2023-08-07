@@ -150,7 +150,7 @@ cerrarSesion = async (req, res) => {
     // Elimina la cookie del token
     res.clearCookie('token');
     // Redirige al usuario a la página de inicio de sesión
-    res.redirect('/usuarios/login');
+    res.redirect('/');
   } catch (error) {
     console.log(error);
     res.status(500).json({ mensaje: 'Error al cerrar sesión', error });
