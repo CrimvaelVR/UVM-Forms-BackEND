@@ -38,7 +38,7 @@
           <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
           
           <div style="display: flex; align-items: center;">
-            <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+            <i class='bx bx-user-circle' id="profileIcon"></i> <p id="profileName"> <%- user %></p>
           </div>
 
             <form action="/index/disconnect" method="POST" class="logout-form" >

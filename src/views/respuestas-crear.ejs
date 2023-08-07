@@ -40,7 +40,7 @@
       <a href="/index" id="formularios" onclick="showLoader()">Mis formularios</a>
       <a href="/contacto" id="contactos" onclick="showLoader()">Contacto</a>
       
-        <i class='bx bx-user-circle' id="profileIcon"></i> <p> <%- user %></p>
+      <i class='bx bx-user-circle' id="profileIcon"></i> <p id="profileName"> <%- user %></p>
 
         <form action="/index/disconnect" method="POST" class="logout-form" >
           <button class="logout-btn" type="submit">Logout</button>

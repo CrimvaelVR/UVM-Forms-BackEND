@@ -38,9 +38,15 @@ function(req, res, next){
 
 // Ruta para mostrar el formulario de registro de usuarios
 
-router.get('/crear', (req, res) => {
+router.get('/crear', verificarSesion, (req, res) => {
   setTimeout(() => {
-    res.render('register.ejs')
+    // Si el usuario está autenticado, redirigir al usuario a la página de inicio
+    if (req.user) {
+      res.redirect('/index');
+    } else {
+      // Si el usuario no está autenticado, mostrar la página de inicio de sesión
+      res.render('register.ejs');
+    }
   }, 800);
 });
 

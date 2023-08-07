@@ -234,11 +234,24 @@ header {
     /* Cambiar el estilo de los enlaces */
     .header-right a {
       text-align: center;
+      background-color: white;
+      padding: 1ch;
+      color: black;
+      border-radius: 1ch;
       margin-top: 2vh;
       margin-bottom: 1vh;
       box-shadow:-2px -2px 5px rgba(0,0,0,0.1);        
       transition:border-radius 0.3s ease-in-out, box-shadow 0.3s ease-in-out;        
     }
+
+    #profileIcon{
+      font-size: 25px;
+      color: white;
+  }
+
+  #profileName{
+    color: white;
+  }
     
     /* Quitar el radio del borde y la sombra de la caja de los enlaces de cabecera-derecha cuando se pasa el ratón por encima. */
      .header-right a:hover {        
